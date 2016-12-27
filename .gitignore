@@ -9,7 +9,6 @@
 
 # IDEs and editors
 /.idea
-.vscode
 .project
 .classpath
 .c9/
@@ -18,6 +17,7 @@
 
 # IDE - VSCode
 .vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
