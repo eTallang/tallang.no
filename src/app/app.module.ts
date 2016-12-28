@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MenuComponent, HeaderComponent } from './ui';
+import { HeaderComponent } from './ui';
 import { AppComponent, PicturesComponent, MusicComponent, MoviesComponent, OtherComponent } from './pages';
 import { routes } from './routes/routes';
 
@@ -16,7 +16,6 @@ import { routes } from './routes/routes';
     MusicComponent,
     MoviesComponent,
     OtherComponent,
-    MenuComponent,
     HeaderComponent
   ],
   imports: [
