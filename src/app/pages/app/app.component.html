@@ -1,4 +1,38 @@
-<div class="fluid-container">
+<!--<md-sidenav-container class="flex-container" 
+     fxLayout="row" 
+     fxLayoutAlign=" stretch">
   <app-menu></app-menu>
-  <router-outlet></router-outlet>
-</div>
+  <div class="flex-item" fxFlex>
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>-->
+
+<md-sidenav-container>
+  <md-sidenav mode="side" opened="true" color="primary">
+    <div class="logo" fxLayout="column" [routerLink]="['']">
+      <span class="header">t</span>
+      <span class="subheader">tallang.no</span>
+    </div>
+    <md-list class="flex-container">
+      <md-list-item fxLayoutAlign="end center" [routerLink]="['pictures']">
+        <md-icon>photo_camera</md-icon>
+        <span>Pictures</span>
+      </md-list-item>
+      <md-list-item fxLayoutAlign="end center" [routerLink]="['music']">
+        <md-icon>music_note</md-icon>        
+        <span>Music</span>
+      </md-list-item>
+      <md-list-item fxLayoutAlign="end center" [routerLink]="['movies']">
+        <md-icon>movie</md-icon>        
+        <span>Movies</span>
+      </md-list-item>
+      <md-list-item fxLayoutAlign="end center" [routerLink]="['other']">
+        <md-icon>folder</md-icon>        
+        <span>Other</span>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

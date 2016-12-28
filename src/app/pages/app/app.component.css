@@ -1,0 +1,50 @@
+md-sidenav-container {
+    height: 100%;
+}
+
+md-sidenav {
+    width: 200px;
+    background-color: #282828;
+}
+
+md-list md-list-item {
+    transition: 500ms all;    
+    color: #ddd;
+}
+
+md-list md-list-item:hover {
+    transition: 500ms all;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+md-list md-list-item span {
+    margin-left: 10px;
+    font-size: 10pt;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive !important;
+    text-align: center;
+    text-shadow: 1px 1px black;
+    margin: 30px 0 40px 0;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.header {
+    color: #c93a4e; 
+    line-height: 100%;
+    font-size: 76pt;
+}
+
+.subheader {
+    color: #d6596a;
+    font-size: 12pt;
+}
+
+.page-content {
+    margin: 160px 0 0 40px;
+}
