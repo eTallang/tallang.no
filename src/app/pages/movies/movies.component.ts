@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+  title: string = 'Movies';
+  subtitle: string = 'all home made';
 
   constructor() { }
 
