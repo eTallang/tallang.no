@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai|Roboto:300|Pacifico');
 
 html, body {
-    background: red !important;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     width: 100%;

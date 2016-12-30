@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { HeaderComponent } from './ui';
-import { AppComponent, PicturesComponent, MusicComponent, MoviesComponent, OtherComponent } from './pages';
+import { AppComponent, PicturesComponent, MusicComponent, MoviesComponent, OtherComponent, LoginComponent } from './pages';
 import { routes } from './routes/routes';
 
 @NgModule({
@@ -16,7 +16,8 @@ import { routes } from './routes/routes';
     MusicComponent,
     MoviesComponent,
     OtherComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     MaterialModule.forRoot(),

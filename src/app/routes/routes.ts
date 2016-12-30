@@ -1,6 +1,6 @@
 import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { AppComponent, MoviesComponent, MusicComponent, PicturesComponent, OtherComponent } from '../pages';
+import { AppComponent, MoviesComponent, MusicComponent, PicturesComponent, OtherComponent, LoginComponent } from '../pages';
 
 export const routes: ModuleWithProviders = RouterModule.forRoot([
     {
@@ -22,6 +22,10 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
     {
         path: 'other',
         component: OtherComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: '**',
