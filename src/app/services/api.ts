@@ -14,8 +14,4 @@ export class ApiService {
     constructor(private http: Http) {
 
     }
-
-    // get(path: string):  Observable<any> {
-    //     return this.http.get();
-    // }
-}
+};
