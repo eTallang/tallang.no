@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,14 @@ export class LoginComponent {
     password: ''
   };
 
+  constructor(private authService: AuthService) { }
+
   authenticate() {
-    console.log('Username: ' + this.user.name);
-    console.log('Password: ' + this.user.password);
+    if (this.action === 'Sign up') {
+      this.signUp();
+    } else {
+      this.signIn();
+    }
   }
 
   toggleAction() {
@@ -28,4 +34,11 @@ export class LoginComponent {
     }
   }
 
+  signIn() {
+    this.authService.signIn(this.user.name, this.user.password);
+  }
+
+  signUp() {
+    this.authService.signUp(this.user.name, this.user.password);
+  }
 }
