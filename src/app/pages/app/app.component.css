@@ -25,14 +25,16 @@ md-list md-list-item span {
 
 .footer {
     transition: 500ms all;
-    padding: 10px 20px;
+    padding: 10px 0;
+    width: 100%;
     font-family: 'Pacifico', cursive;
     color: #d6596a;
-    font-size: 10pt;
     position: absolute;
     bottom: 0px;
-    margin-left: 50%;
+    margin-left: 50%;    
     transform: translate(-50%, -50%);
+    text-align: center; 
+    font-size: 10pt;    
 }
 
 .footer:hover {
@@ -64,5 +66,5 @@ md-list md-list-item span {
 }
 
 .page-content {
-    margin: 160px 0 0 40px;
+    margin: 160px 40px 0 40px;
 }
