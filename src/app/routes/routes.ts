@@ -5,7 +5,8 @@ import { AppComponent, MoviesComponent, MusicComponent, PicturesComponent, Other
 export const routes: ModuleWithProviders = RouterModule.forRoot([
     {
         path: '',
-        component: PicturesComponent
+        redirectTo: 'pictures',
+        pathMatch: 'full'
     },
     {
         path: 'pictures',
@@ -31,4 +32,4 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
         path: '**',
         redirectTo: ''
     }
-])
+]);
