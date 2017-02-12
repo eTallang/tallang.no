@@ -21,7 +21,7 @@ import { routes } from './routes/routes';
   ],
   imports: [
     MaterialModule.forRoot(),
-    FlexLayoutModule.forRoot(),
+    FlexLayoutModule,
     BrowserModule,
     FormsModule,
     HttpModule,
