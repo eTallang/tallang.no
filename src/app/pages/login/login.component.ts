@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   action: string = 'Sign in';
+  toggleActionText: string = 'Not registered?';
   user = {
     name: '',
     password: ''
@@ -20,6 +21,16 @@ export class LoginComponent implements OnInit {
   authenticate() {
     console.log("Username: " + this.user.name);
     console.log("Password: " + this.user.password);
+  }
+
+  toggleAction() {
+    if(this.action === 'Sign in') {
+      this.action = 'Sign up';
+      this.toggleActionText = 'Already registered?';
+    } else {
+      this.action = 'Sign in';
+      this.toggleActionText = 'Not registered';
+    }
   }
 
 }

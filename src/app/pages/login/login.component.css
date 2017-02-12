@@ -2,10 +2,13 @@
     color: #d6596a;
 }
 
+md-card {
+    width: 400px;
+}
+
 md-input-container {
     margin: 0 40px;
 }
-
 
 md-card-content {
     margin: 30px 0;
