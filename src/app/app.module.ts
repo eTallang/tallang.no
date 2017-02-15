@@ -4,11 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {
-  AngularFireModule,
-  AuthProviders,
-  AuthMethods } from 'angularfire2';
 import { HeaderComponent } from './ui';
+import * as firebase from 'firebase';
 import {
     AppComponent,
     PicturesComponent,
@@ -31,11 +28,7 @@ export const firebaseConfig = {
   storageBucket: 'tallang-267a8.appspot.com',
   messagingSenderId: '412607846143'
 };
-
-const authConfig = {
-  provider: AuthProviders.Password,
-  method: AuthMethods.OAuthToken
-};
+firebase.initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -49,7 +42,6 @@ const authConfig = {
   ],
   imports: [
     MaterialModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig, authConfig),
     FlexLayoutModule,
     BrowserModule,
     FormsModule,

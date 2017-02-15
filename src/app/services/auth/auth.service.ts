@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
 
 @Injectable()
 export class AuthService {
 
-  constructor(private angularFire: AngularFire) { }
+  constructor() { }
 
-  signIn(username: string, password: string) {
-    this.angularFire.auth.login({
-      email: username,
-      password: password
-    });
+  storeJwt(jwt: any) {
+    localStorage.setItem('id_token', jwt);
   }
 
-  signUp(username: string, password: string) {
-    this.angularFire.auth.createUser({
-      email: username,
-      password: password
-    });
+  isLoggedIn() {
+
   }
+
+  logout() {
+
+  }
+
 }

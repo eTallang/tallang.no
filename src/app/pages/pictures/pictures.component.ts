@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pictures.component.css']
 })
 export class PicturesComponent implements OnInit {
-  title: string = 'Pictures';
-  subtitle: string = 'in a slideshow';
+  title = 'Pictures';
+  subtitle = 'in a slideshow';
 
   constructor() { }
 

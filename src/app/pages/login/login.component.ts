@@ -7,8 +7,8 @@ import { AuthService } from '../../services';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  action: string = 'Sign in';
-  toggleActionText: string = 'Not registered?';
+  action = 'Sign in';
+  toggleActionText = 'Not registered?';
   user = {
     name: '',
     password: ''
@@ -35,10 +35,10 @@ export class LoginComponent {
   }
 
   signIn() {
-    this.authService.signIn(this.user.name, this.user.password);
+
   }
 
   signUp() {
-    this.authService.signUp(this.user.name, this.user.password);
+
   }
 }
