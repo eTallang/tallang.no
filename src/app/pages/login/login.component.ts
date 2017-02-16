@@ -23,22 +23,30 @@ export class LoginComponent {
 
   authenticate() {
     if (this.action === 'Sign up') {
-      this.authService.signup(this.user.name, this.user.password)
-      .then(result => {
-        this.authService.sendEmailVerification();
-        this.toastService.showMessage('Success! Check your inbox to verify your email.', 'Got it');
-      }).catch(error => {
-        this.toastService.showMessage(error.message);
-      });
+      this.signup();
     } else {
-      this.authService.login(this.user.name, this.user.password)
-      .then(result => {
-        this.toastService.showMessage('Signed in succesfully!');
-        this.router.navigate(['']);
-      }).catch(error => {
-        this.toastService.showMessage(error.message);
-      });
+      this.signin();
     }
+  }
+
+  signup() {
+    this.authService.signup(this.user.name, this.user.password)
+    .then(result => {
+      this.authService.sendEmailVerification();
+      this.toastService.showMessage('Success! Check your inbox to verify your email.', 'Got it');
+    }).catch(error => {
+      this.toastService.showMessage(error.message);
+    });
+  }
+
+  signin() {
+    this.authService.login(this.user.name, this.user.password)
+    .then(result => {
+      this.toastService.showMessage('Signed in succesfully!');
+      this.router.navigate(['']);
+    }).catch(error => {
+      this.toastService.showMessage(error.message);
+    });
   }
 
   toggleAction() {
@@ -50,5 +58,4 @@ export class LoginComponent {
       this.toggleActionText = 'Not registered';
     }
   }
-
 }
