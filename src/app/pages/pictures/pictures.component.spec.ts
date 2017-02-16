@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { PicturesComponent } from './pictures.component';
+import { HeaderComponent } from '../../ui';
 
 describe('PicturesComponent', () => {
   let component: PicturesComponent;
@@ -11,7 +12,7 @@ describe('PicturesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PicturesComponent ]
+      declarations: [ PicturesComponent, HeaderComponent ]
     })
     .compileComponents();
   }));

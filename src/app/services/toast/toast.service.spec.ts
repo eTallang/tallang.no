@@ -3,10 +3,16 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { ToastService } from './toast.service';
 
+import { MdSnackBar } from '@angular/material';
+
+class StubService {}
+
 describe('ToastService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ToastService]
+      providers: [
+        ToastService,
+        { provide: MdSnackBar, useClass: StubService } ]
     });
   });
 
