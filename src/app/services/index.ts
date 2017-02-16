@@ -4,3 +4,6 @@ export { MusicService } from './music/music.service';
 export { MoviesService } from './movies/movies.service';
 export { OtherService } from './other/other.service';
 export { AuthService } from './auth/auth.service';
+export { Store } from './store/store';
+export { StoreHelper } from './store/store-helper';
+export { ToastService } from './toast/toast.service';

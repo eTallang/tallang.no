@@ -4,8 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HeaderComponent } from './ui';
 import * as firebase from 'firebase';
+
+import { HeaderComponent, MenuComponent } from './ui';
 import {
     AppComponent,
     PicturesComponent,
@@ -19,7 +20,10 @@ import {
   MoviesService,
   MusicService,
   OtherService,
-  PicturesService } from './services';
+  PicturesService,
+  Store,
+  StoreHelper,
+  ToastService } from './services';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyAuKdJ5hsSN98XrByybfc5zqxnLoHaFwGY',
@@ -38,7 +42,8 @@ firebase.initializeApp(firebaseConfig);
     MoviesComponent,
     OtherComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     MaterialModule.forRoot(),
@@ -53,7 +58,10 @@ firebase.initializeApp(firebaseConfig);
     MoviesService,
     MusicService,
     OtherService,
-    PicturesService
+    PicturesService,
+    Store,
+    StoreHelper,
+    ToastService
   ],
   bootstrap: [AppComponent]
 })

@@ -7,64 +7,6 @@ md-sidenav {
     background-color: #282828;
 }
 
-md-list md-list-item {
-    transition: 500ms all;    
-    color: #ddd;
-}
-
-md-list md-list-item:hover {
-    transition: 500ms all;
-    background-color: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-}
-
-md-list md-list-item span {
-    margin-left: 10px;
-    font-size: 10pt;
-}
-
-.footer {
-    transition: 500ms all;
-    padding: 10px 0;
-    width: 100%;
-    font-family: 'Pacifico', cursive;
-    color: #d6596a;
-    position: absolute;
-    bottom: 0px;
-    margin-left: 50%;    
-    transform: translate(-50%, -50%);
-    text-align: center; 
-    font-size: 10pt;    
-}
-
-.footer:hover {
-    transition: 500ms all;
-    background-color: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-}
-
-.logo {
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    text-shadow: 1px 1px black;
-    margin: 30px 0 40px 0;
-}
-
-.logo:hover {
-    cursor: pointer;
-}
-
-.header {
-    color: #c93a4e; 
-    line-height: 100%;
-    font-size: 76pt;
-}
-
-.subheader {
-    color: #d6596a;
-    font-size: 12pt;
-}
-
 .page-content {
     margin: 160px 40px 0 40px;
 }

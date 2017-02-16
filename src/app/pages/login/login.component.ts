@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services';
+import { Router } from '@angular/router';
+
+import { AuthService, ToastService } from '../../services';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +16,28 @@ export class LoginComponent {
     password: ''
   };
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private toastService: ToastService) { }
 
   authenticate() {
     if (this.action === 'Sign up') {
-      this.signUp();
+      this.authService.signup(this.user.name, this.user.password)
+      .then(result => {
+        this.authService.sendEmailVerification();
+        this.toastService.showMessage('Success! Check your inbox to verify your email.', 'Got it');
+      }).catch(error => {
+        this.toastService.showMessage(error.message);
+      });
     } else {
-      this.signIn();
+      this.authService.login(this.user.name, this.user.password)
+      .then(result => {
+        this.toastService.showMessage('Signed in succesfully!');
+        this.router.navigate(['']);
+      }).catch(error => {
+        this.toastService.showMessage(error.message);
+      });
     }
   }
 
@@ -34,11 +51,4 @@ export class LoginComponent {
     }
   }
 
-  signIn() {
-
-  }
-
-  signUp() {
-
-  }
 }

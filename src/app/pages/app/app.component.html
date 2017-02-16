@@ -1,30 +1,6 @@
 <md-sidenav-container>
   <md-sidenav mode="side" opened="true" color="primary">
-    <div class="logo" fxLayout="column" [routerLink]="['']">
-      <span class="header">t</span>
-      <span class="subheader">tallang.no</span>
-    </div>
-    <md-list class="flex-container">
-      <md-list-item fxLayoutAlign="end center" [routerLink]="['pictures']">
-        <md-icon>photo_camera</md-icon>
-        <span>Pictures</span>
-      </md-list-item>
-      <md-list-item fxLayoutAlign="end center" [routerLink]="['music']">
-        <md-icon>music_note</md-icon>        
-        <span>Music</span>
-      </md-list-item>
-      <md-list-item fxLayoutAlign="end center" [routerLink]="['movies']">
-        <md-icon>movie</md-icon>        
-        <span>Movies</span>
-      </md-list-item>
-      <md-list-item fxLayoutAlign="end center" [routerLink]="['other']">
-        <md-icon>folder</md-icon>        
-        <span>Other</span>
-      </md-list-item>
-    </md-list>
-    <div class="footer" [routerLink]="['login']">
-      <span>Sign in</span>
-    </div>
+    <app-menu></app-menu>
   </md-sidenav>
   <div class="page-content">
     <router-outlet></router-outlet>
