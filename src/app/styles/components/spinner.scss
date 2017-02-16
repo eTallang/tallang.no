@@ -1,14 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Arima+Madurai|Roboto:300|Pacifico');
-
-html, body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.loader {
+.spinner {
     border: 2px solid #f3f3f3; /* Light grey */
     border-top: 2px solid #303030; /* Blue */
     border-radius: 50%;

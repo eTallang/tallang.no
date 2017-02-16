@@ -18,8 +18,9 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css",
-        "theme.scss"
+        "styles.scss",
+        "theme.scss",
+        "app/styles/index.scss"
       ],
       "scripts": [],
       "environments": {
@@ -42,7 +43,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "prefixInterfaces": false,
     "inline": {
       "style": false,
