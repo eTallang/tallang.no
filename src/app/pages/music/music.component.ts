@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./music.component.scss']
 })
 export class MusicComponent implements OnInit {
-  title: string = 'Music';
-  subtitle: string = 'of different sorts';
+  title = 'Music';
+  subtitle = 'of different sorts';
 
   constructor() { }
 

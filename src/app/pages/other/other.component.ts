@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./other.component.scss']
 })
 export class OtherComponent implements OnInit {
-  title: string = 'Other';
-  subtitle: string = 'files';
+  title = 'Other';
+  subtitle = 'files';
 
   constructor() { }
 
