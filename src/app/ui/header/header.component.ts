@@ -3,11 +3,11 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Input() title: string = 'Header';
-  @Input() subtitle: string = 'Subheader';
+  @Input() title = 'Header';
+  @Input() subtitle = 'Subheader';
 
 
   constructor() { }

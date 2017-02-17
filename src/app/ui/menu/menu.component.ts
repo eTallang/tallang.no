@@ -5,7 +5,7 @@ import { AuthService, Store, ToastService } from '../../services';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
   isSignedIn;

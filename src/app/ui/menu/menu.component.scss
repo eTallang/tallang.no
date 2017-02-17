@@ -1,3 +1,4 @@
+@import "../../styles/palette.scss";
 
 md-list md-list-item {
     transition: 500ms all;    
@@ -20,7 +21,7 @@ md-list md-list-item span {
     padding: 10px 0;
     width: 100%;
     font-family: 'Pacifico', cursive;
-    color: #d6596a;
+    color: $accent-color;
     position: absolute;
     bottom: 0px;
     margin-left: 50%;    
@@ -47,12 +48,12 @@ md-list md-list-item span {
 }
 
 .header {
-    color: #c93a4e; 
+    color: $accent-color-dark; 
     line-height: 100%;
     font-size: 76pt;
 }
 
 .subheader {
-    color: #d6596a;
+    color: $accent-color;
     font-size: 12pt;
 }
