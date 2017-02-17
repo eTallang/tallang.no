@@ -19,7 +19,7 @@
       "mobile": false,
       "styles": [
         "styles.scss",
-        "theme.scss",
+        "app/styles/angular-material-theme.scss",
         "app/styles/index.scss"
       ],
       "scripts": [],
