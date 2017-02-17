@@ -21,7 +21,7 @@ md-list md-list-item span {
     padding: 10px 0;
     width: 100%;
     font-family: 'Pacifico', cursive;
-    color: $accent-color;
+    color: $primary-color-light;
     position: absolute;
     bottom: 0px;
     margin-left: 50%;    
@@ -48,12 +48,12 @@ md-list md-list-item span {
 }
 
 .header {
-    color: $accent-color-dark; 
+    color: $primary-color; 
     line-height: 100%;
     font-size: 76pt;
 }
 
 .subheader {
-    color: $accent-color;
+    color: $primary-color-light;
     font-size: 12pt;
 }
