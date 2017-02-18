@@ -6,7 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import * as firebase from 'firebase';
 
-import { HeaderComponent, MenuComponent } from './ui';
+import {
+  HeaderComponent,
+  MenuComponent,
+  ImageComponent } from './ui';
 import {
     AppComponent,
     PicturesComponent,
@@ -43,7 +46,8 @@ firebase.initializeApp(firebaseConfig);
     OtherComponent,
     HeaderComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    ImageComponent
   ],
   imports: [
     MaterialModule.forRoot(),
