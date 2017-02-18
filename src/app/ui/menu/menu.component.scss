@@ -1,7 +1,7 @@
 @import "../../styles/palette.scss";
 
 md-list md-list-item {
-    transition: 500ms all;    
+    transition: 500ms all;
     color: #ddd;
 }
 
@@ -12,8 +12,8 @@ md-list md-list-item:hover {
 }
 
 md-list md-list-item span {
-    margin-left: 10px;
-    font-size: 10pt;
+    font-size: 12pt;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.8);
 }
 
 .footer {
@@ -40,7 +40,7 @@ md-list md-list-item span {
     font-family: 'Pacifico', cursive;
     text-align: center;
     text-shadow: 1px 1px black;
-    margin: 30px 0 40px 0;
+    margin: 30px 0 60px 0;
 }
 
 .logo:hover {

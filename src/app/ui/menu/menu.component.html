@@ -4,20 +4,16 @@
   </div>
   <md-list class="flex-container">
     <md-list-item fxLayoutAlign="end center" [routerLink]="['pictures']">
-      <md-icon>photo_camera</md-icon>
-      <span>Pictures</span>
+      <span>PICTURES</span>
     </md-list-item>
     <md-list-item fxLayoutAlign="end center" [routerLink]="['music']">
-      <md-icon>music_note</md-icon>        
-      <span>Music</span>
+      <span>MUSIC</span>
     </md-list-item>
     <md-list-item fxLayoutAlign="end center" [routerLink]="['movies']">
-      <md-icon>movie</md-icon>        
-      <span>Movies</span>
+      <span>MOVIES</span>
     </md-list-item>
     <md-list-item fxLayoutAlign="end center" [routerLink]="['other']">
-      <md-icon>folder</md-icon>        
-      <span>Other</span>
+      <span>OTHER</span>
     </md-list-item>
   </md-list>
   <div class="footer" [routerLink]="['login']" *ngIf="!isSignedIn">
