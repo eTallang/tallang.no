@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { OtherComponent } from './other.component';
-import { HeaderComponent } from '../../ui';
 
 describe('OtherComponent', () => {
   let component: OtherComponent;
@@ -12,7 +11,7 @@ describe('OtherComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OtherComponent, HeaderComponent ]
+      declarations: [ OtherComponent ]
     })
     .compileComponents();
   }));

@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { MoviesComponent } from './movies.component';
-import { HeaderComponent } from '../../ui';
 
 describe('MoviesComponent', () => {
   let component: MoviesComponent;
@@ -12,7 +11,7 @@ describe('MoviesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoviesComponent, HeaderComponent ]
+      declarations: [ MoviesComponent ]
     })
     .compileComponents();
   }));

@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 import * as firebase from 'firebase';
 
 import {
-  HeaderComponent,
   MenuComponent,
   ImageComponent,
   MusicPlayerComponent } from './ui';
@@ -45,7 +44,6 @@ firebase.initializeApp(firebaseConfig);
     MusicComponent,
     MoviesComponent,
     OtherComponent,
-    HeaderComponent,
     LoginComponent,
     MenuComponent,
     ImageComponent,
