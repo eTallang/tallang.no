@@ -2,23 +2,27 @@
 
 md-list md-list-item {
     transition: 500ms all;
-    color: #ddd;
+    // color: #eee;
+    color: $primary-color-lighter;
+    padding: 10px 0;
 }
 
 md-list md-list-item:hover {
     transition: 500ms all;
+    padding: 20px 0;
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
 }
 
 md-list md-list-item span {
-    font-size: 12pt;
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.8);
+    font-size: 20pt;
+    // color: $accent-color-lighter;
+    // text-shadow: 1px 1px 0 rgba(0,0,0,0.8);
 }
 
 .footer {
     transition: 500ms all;
-    padding: 10px 0;
+    padding: 20px 0;
     width: 100%;
     font-family: 'Pacifico', cursive;
     color: $primary-color-light;
