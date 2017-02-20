@@ -51,10 +51,6 @@ md-list md-list-item span {
 .header {
     color: $primary-color; 
     line-height: 100%;
-    font-size: 76pt;
-}
-
-.subheader {
-    color: $primary-color-light;
-    font-size: 12pt;
+    font-size: 64pt;
+    margin-left: -8px;
 }
