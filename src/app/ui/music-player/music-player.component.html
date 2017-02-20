@@ -1,0 +1,14 @@
+<button md-button (click)="goToBeginning()">
+  <span class="icon-control-start"></span>
+</button>
+<button md-button (click)="togglePlay()">
+  <span class="icon-control-play" *ngIf="this.player.paused"></span>
+  <span class="icon-control-pause" *ngIf="!this.player.paused"></span>
+</button>
+<button md-button (click)="goToEnd()">
+  <span class="icon-control-end"></span>
+</button>
+<div class="currentPosition" [style.width]="player.currentTime/player.duration * 100 + '%'"></div>
+<div class="totalTrackLength"></div>
+
+Currently played: {{progress}}
