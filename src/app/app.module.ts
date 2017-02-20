@@ -9,7 +9,8 @@ import * as firebase from 'firebase';
 import {
   HeaderComponent,
   MenuComponent,
-  ImageComponent } from './ui';
+  ImageComponent,
+  MusicPlayerComponent } from './ui';
 import {
     AppComponent,
     PicturesComponent,
@@ -47,7 +48,8 @@ firebase.initializeApp(firebaseConfig);
     HeaderComponent,
     LoginComponent,
     MenuComponent,
-    ImageComponent
+    ImageComponent,
+    MusicPlayerComponent
   ],
   imports: [
     MaterialModule.forRoot(),

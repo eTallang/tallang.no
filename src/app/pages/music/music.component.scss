@@ -1,0 +1,15 @@
+@import '../../styles/palette.scss';
+
+.body-wrapper {
+    margin: 160px 40px 0 40px;
+}
+
+md-card {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-left: 8px solid $primary-color;
+}
+
+audio {
+    width: 100%;
+}

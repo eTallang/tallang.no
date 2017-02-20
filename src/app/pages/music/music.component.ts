@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MusicComponent implements OnInit {
   title = 'Music';
   subtitle = 'of different sorts';
+  tracks: string[] = ['Track 1', 'Track 2', 'Track 3', 'Track 4', 'Track 5'];
 
   constructor() { }
 
