@@ -2,7 +2,6 @@
 
 md-list md-list-item {
     transition: 500ms all;
-    // color: #eee;
     color: $primary-color-lighter;
     padding: 10px 0;
 }
@@ -16,8 +15,6 @@ md-list md-list-item:hover {
 
 md-list md-list-item span {
     font-size: 20pt;
-    // color: $accent-color-lighter;
-    // text-shadow: 1px 1px 0 rgba(0,0,0,0.8);
 }
 
 .footer {
