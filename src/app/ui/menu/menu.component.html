@@ -1,23 +1,23 @@
-  <div class="logo" fxLayout="column" [routerLink]="['']">
-    <span class="header">t</span>
-  </div>
-  <md-list class="flex-container">
-    <md-list-item fxLayoutAlign="center center" [routerLink]="['pictures']">
-      <span class="icon-camera"></span>
-    </md-list-item>
-    <md-list-item fxLayoutAlign="center center" [routerLink]="['music']">
-      <span class="icon-music-tone"></span>
-    </md-list-item>
-    <md-list-item fxLayoutAlign="center center" [routerLink]="['movies']">
-      <span class="icon-film"></span>
-    </md-list-item>
-    <md-list-item fxLayoutAlign="center center" [routerLink]="['other']">
-      <span class="icon-folder"></span>
-    </md-list-item>
-  </md-list>
-  <div class="footer" [routerLink]="['login']" *ngIf="!isSignedIn">
-    <span>Sign in</span>
-  </div>
-  <div class="footer" *ngIf="isSignedIn" (click)="signOut()">
-    <span>Sign out</span>
-  </div>
+<div class="logo" fxLayout="column" [routerLink]="['']">
+  <span class="header">t</span>
+</div>
+<md-list class="flex-container">
+  <md-list-item fxLayoutAlign="center center" [routerLink]="['pictures']">
+    <span class="icon-camera"></span>
+  </md-list-item>
+  <md-list-item fxLayoutAlign="center center" [routerLink]="['music']">
+    <span class="icon-music-tone"></span>
+  </md-list-item>
+  <md-list-item fxLayoutAlign="center center" [routerLink]="['movies']">
+    <span class="icon-film"></span>
+  </md-list-item>
+  <md-list-item fxLayoutAlign="center center" [routerLink]="['other']">
+    <span class="icon-folder"></span>
+  </md-list-item>
+</md-list>
+<div class="footer" fxLayoutAlign="center end" [routerLink]="['login']" *ngIf="!isSignedIn">
+  <span>Sign in</span>
+</div>
+<div class="footer" fxLayoutAlign="center end" *ngIf="isSignedIn" (click)="signOut()">
+  <span>Sign out</span>
+</div>
