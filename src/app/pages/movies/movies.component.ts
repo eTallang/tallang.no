@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
   title = 'Movies';
-  subtitle = 'all home made';
+  // subtitle = 'all home made';
 
   constructor() { }
 
