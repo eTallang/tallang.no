@@ -1,15 +1,13 @@
-<md-card flex="noshrink" fxLayout="column" fxLayoutAlign="center stretch">
-  <md-card-title fxLayoutAlign="center center">{{action}}</md-card-title>
-  <md-card-content fxLayout="column" fxLayoutAlign="center stretch">
-    <md-input-container>
-      <input md-input type="text" placeholder="Username" [(ngModel)]="user.name">
-    </md-input-container>
-    <md-input-container>
-      <input md-input type="password" placeholder="Password" [(ngModel)]="user.password">
-    </md-input-container>
-  </md-card-content>
-  <md-card-actions fxLayoutAlign="center center">
-    <button md-button (click)="authenticate()">{{action}}</button>
-    <button md-button class="link" (click)="toggleAction()">{{toggleActionText}}</button>
-  </md-card-actions>
-</md-card>
+<form fxLayout="column" fxLayoutAlign="center stretch" class="wrapper" autocomplete="off">
+  <h1 fxLayoutAlign="center center">{{action}}</h1>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <input type="email" fxFlex="25%" placeholder="email" required [(ngModel)]="user.name" name="username">
+  </div> 
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <input type="password" fxFlex="25%" placeholder="password" required [(ngModel)]="user.password" name="password">
+  </div> 
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button md-button type="submit" (click)="authenticate()">{{action}}</button>
+    <button md-button (click)="toggleAction()">{{toggleActionText}}</button>
+  </div>
+</form>

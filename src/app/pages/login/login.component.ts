@@ -55,7 +55,7 @@ export class LoginComponent {
       this.toggleActionText = 'Already registered?';
     } else {
       this.action = 'Sign in';
-      this.toggleActionText = 'Not registered';
+      this.toggleActionText = 'Not registered?';
     }
   }
 }
