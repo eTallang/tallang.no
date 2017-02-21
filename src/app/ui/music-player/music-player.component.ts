@@ -1,13 +1,13 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, OnDestroy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-music-player',
   templateUrl: './music-player.component.html',
   styleUrls: ['./music-player.component.scss']
 })
-export class MusicPlayerComponent implements OnChanges {
+export class MusicPlayerComponent implements OnChanges, OnDestroy {
   isPlaying = false;
-  @Input() url: string = 'http://tallang.no/content/msc/Mads%20solo.ogg';
+  @Input() url: string = 'http://tallang.no/old/content/msc/Mads%20solo.ogg';
   player = new Audio();
   progress: any;
 
@@ -15,12 +15,15 @@ export class MusicPlayerComponent implements OnChanges {
     this.player.src = this.url;
     this.player.load();
     this.player.addEventListener('timeupdate', function(event) {
-      console.log(event);
     });
   }
 
   ngOnChanges() {
     this.player.src = this.url;
+  }
+
+  ngOnDestroy() {
+    this.player.pause();
   }
 
   togglePlay() {
