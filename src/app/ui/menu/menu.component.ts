@@ -15,7 +15,6 @@ export interface Tab {
 })
 export class MenuComponent implements OnInit {
   isSignedIn: boolean;
-  activeTab: string;
   tabs: Tab[] = [
     {
       url: 'pictures',
