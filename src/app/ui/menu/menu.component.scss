@@ -53,3 +53,8 @@ md-list md-list-item span {
     font-size: 64pt;
     margin-left: -8px;
 }
+
+.active span {
+    color: $accent-color;
+    text-shadow: 0 0 10px transparentize($accent-color, 0.5);
+}

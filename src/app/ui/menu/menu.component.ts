@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService, Store, ToastService } from '../../services';
+
+export interface Tab {
+  url: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-menu',
@@ -8,11 +14,31 @@ import { AuthService, Store, ToastService } from '../../services';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  isSignedIn;
+  isSignedIn: boolean;
+  activeTab: string;
+  tabs: Tab[] = [
+    {
+      url: 'pictures',
+      icon: 'icon-camera'
+    },
+    {
+      url: 'music',
+      icon: 'icon-music-tone'
+    },
+    {
+      url: 'movies',
+      icon: 'icon-film'
+    },
+    {
+      url: 'other',
+      icon: 'icon-folder'
+    }
+  ];
 
   constructor(
     public authService: AuthService,
     private store: Store,
+    public router: Router,
     private toastService: ToastService) { }
 
   ngOnInit() {

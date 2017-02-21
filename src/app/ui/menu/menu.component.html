@@ -2,17 +2,11 @@
   <span class="header">t</span>
 </div>
 <md-list class="flex-container">
-  <md-list-item fxLayoutAlign="center center" [routerLink]="['pictures']">
-    <span class="icon-camera"></span>
-  </md-list-item>
-  <md-list-item fxLayoutAlign="center center" [routerLink]="['music']">
-    <span class="icon-music-tone"></span>
-  </md-list-item>
-  <md-list-item fxLayoutAlign="center center" [routerLink]="['movies']">
-    <span class="icon-film"></span>
-  </md-list-item>
-  <md-list-item fxLayoutAlign="center center" [routerLink]="['other']">
-    <span class="icon-folder"></span>
+  <md-list-item *ngFor="let tab of tabs"
+    fxLayoutAlign="center center"
+    [routerLink]="[tab.url]"
+    [ngClass]="{'active': router.url.slice(1, router.url.length) === tab.url}">
+    <span [ngClass]="tab.icon"></span>
   </md-list-item>
 </md-list>
 <div class="footer" fxLayoutAlign="center end" [routerLink]="['login']" *ngIf="!isSignedIn">
