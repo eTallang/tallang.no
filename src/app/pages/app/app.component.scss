@@ -2,7 +2,8 @@
 
 md-sidenav-container {
     height: 100%;
-    background-color: $primary-color;
+    // background-color: $primary-color;
+    background: linear-gradient(45deg, $primary-color-light 0%, $primary-color-lighter 100%);
 }
 
 md-sidenav {
