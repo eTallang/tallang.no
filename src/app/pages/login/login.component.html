@@ -1,10 +1,26 @@
 <form fxLayout="column" fxLayoutAlign="center stretch" class="wrapper" autocomplete="off">
   <h1 fxLayoutAlign="center center">{{action}}</h1>
   <div fxLayout="row" fxLayoutAlign="center center">
-    <input type="email" fxFlex="25%" placeholder="email" required [(ngModel)]="user.name" name="username" spellcheck="false">
+    <input  type="email"
+            fxFlex="25%"
+            fxFlex.md="40%"
+            fxFlex.sm="50%"
+            fxFlex.xs="75%"
+            placeholder="email"
+            required [(ngModel)]="user.name"
+            name="username"
+            spellcheck="false">
   </div> 
   <div fxLayout="row" fxLayoutAlign="center center">
-    <input type="password" fxFlex="25%" placeholder="password" required [(ngModel)]="user.password" name="password" spellcheck="false">
+    <input  type="password"
+            fxFlex="25%"
+            fxFlex.md="40%"
+            fxFlex.sm="50%"
+            fxFlex.xs="75%"
+            placeholder="password"
+            required [(ngModel)]="user.password"
+            name="password"
+            spellcheck="false">
   </div> 
   <div fxLayout="row" fxLayoutAlign="center center">
     <button md-button type="submit" (click)="authenticate()">{{action}}</button>
