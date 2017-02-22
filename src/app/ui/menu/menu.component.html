@@ -1,14 +1,15 @@
-<nav fxLayout="column">
-  <a [routerLink]="['']" class="logo">t</a>
-  <div fxFlex="5%"></div>
-  <md-list class="flex-container">
-    <md-list-item *ngFor="let tab of tabs"
+<!--<nav fxLayout="column" fxHide.xs="TRUE" fxLayout.xs="row" class="vanlig">-->
+<nav fxLayout="column" fxLayout.xs="row">
+  <a [routerLink]="['']" class="logo" fxHide.xs>t</a>
+  <div fxFlex="5%" fxHide.xs></div>
+  <div fxLayout="column" fxLayout.xs="row" class="menu-buttons flex-container">
+    <a *ngFor="let tab of tabs"
         fxLayoutAlign="center center"
         [routerLink]="[tab.url]"
         [ngClass]="{'active': router.url.slice(1, router.url.length) === tab.url}">
         <span [ngClass]="tab.icon"></span>
-    </md-list-item>
-  </md-list>
+    </a>
+  </div>
   <div fxFlex></div>
   <a class="footer" fxLayoutAlign="center end" [routerLink]="['login']" *ngIf="!isSignedIn">
     <span>Sign in</span>

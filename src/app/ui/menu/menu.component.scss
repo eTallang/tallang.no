@@ -1,28 +1,50 @@
 @import "../../styles/palette.scss";
 
-md-list md-list-item {
-    transition: 500ms all;
-    color: $primary-color-lighter;
-    padding: 10px 0;
+nav {
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+    display: block;
+    position: fixed;
+    background: $dark-gray;        
+    width: 90px;
+    height: 100%;
 }
 
-md-list md-list-item:hover {
+.logo {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    text-shadow: 1px 1px black;
+    margin: 20px 0 0 -8px;
+    color: $primary-color; 
+    line-height: 100%;
+    font-size: 64pt;
+    text-decoration: none;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.menu-buttons a {
+    transition: 500ms all;
+    color: $primary-color-lighter;
+    padding: 34px 0;
+    height: 48px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu-buttons a:hover {
     transition: 500ms all;
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
 }
 
-md-list md-list-item span {
+.menu-buttons a span {
     font-size: 20pt;
 }
 
-nav {
-    background: $dark-gray;
-    box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
-    display: block;
-    position: fixed;
-    width: 90px;
-    height: 100%;
+.active span {
+    color: $accent-color;
 }
 
 .footer {
@@ -42,21 +64,27 @@ nav {
     cursor: pointer;
 }
 
-.logo {
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    text-shadow: 1px 1px black;
-    margin: 20px 0 0 -8px;
-    color: $primary-color; 
-    line-height: 100%;
-    font-size: 64pt;
-    text-decoration: none;
-}
+@media screen and (max-width: 599px) {
+    nav {
+        box-shadow: 0 8px 10px -5px rgba(0,0,0,.1), 0 6px 30px 5px rgba(0,0,0,.08);        
+        height: 70px;
+        width: 100%;
+        background: transparent;
+    }
 
-.logo:hover {
-    cursor: pointer;
-}
+    .menu-buttons {
+        margin-left: 10px;
+    }
 
-.active span {
-    color: $accent-color;
+    .menu-buttons a {
+        padding-right: 20px;
+        padding-left: 20px;
+        color: white;
+    }
+
+    .footer {
+        color: white;
+        padding: 10px 20px;
+        margin: auto 10px auto 0;
+    }
 }
