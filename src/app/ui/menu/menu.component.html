@@ -1,17 +1,19 @@
-<div class="logo" fxLayout="column" [routerLink]="['']">
-  <span class="header">t</span>
-</div>
-<md-list class="flex-container">
-  <md-list-item *ngFor="let tab of tabs"
-    fxLayoutAlign="center center"
-    [routerLink]="[tab.url]"
-    [ngClass]="{'active': router.url.slice(1, router.url.length) === tab.url}">
-    <span [ngClass]="tab.icon"></span>
-  </md-list-item>
-</md-list>
-<div class="footer" fxLayoutAlign="center end" [routerLink]="['login']" *ngIf="!isSignedIn">
-  <span>Sign in</span>
-</div>
-<div class="footer" fxLayoutAlign="center end" *ngIf="isSignedIn" (click)="signOut()">
-  <span>Sign out</span>
-</div>
+<nav fxLayout="column">
+  <a [routerLink]="['']" class="logo">t</a>
+  <div fxFlex="5%"></div>
+  <md-list class="flex-container">
+    <md-list-item *ngFor="let tab of tabs"
+        fxLayoutAlign="center center"
+        [routerLink]="[tab.url]"
+        [ngClass]="{'active': router.url.slice(1, router.url.length) === tab.url}">
+        <span [ngClass]="tab.icon"></span>
+    </md-list-item>
+  </md-list>
+  <div fxFlex></div>
+  <a class="footer" fxLayoutAlign="center end" [routerLink]="['login']" *ngIf="!isSignedIn">
+    <span>Sign in</span>
+  </a>
+  <a class="footer" fxLayoutAlign="center end" *ngIf="isSignedIn" (click)="signOut()">
+    <span>Sign out</span>
+  </a>
+</nav>

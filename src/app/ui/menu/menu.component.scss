@@ -16,18 +16,24 @@ md-list md-list-item span {
     font-size: 20pt;
 }
 
+nav {
+    background: $dark-gray;
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+    display: block;
+    position: fixed;
+    width: 90px;
+    height: 100%;
+}
+
 .footer {
     transition: 500ms all;
     padding: 20px 0;
-    width: 100%;
     font-family: 'Pacifico', cursive;
     color: $primary-color-light;
-    position: absolute;
-    bottom: 0px;
-    margin-left: 50%;    
-    transform: translate(-50%, -50%);
     text-align: center; 
     font-size: 10pt;
+    text-decoration: none;
+    margin-bottom: 10px;
 }
 
 .footer:hover {
@@ -40,18 +46,15 @@ md-list md-list-item span {
     font-family: 'Pacifico', cursive;
     text-align: center;
     text-shadow: 1px 1px black;
-    margin: 30px 0 60px 0;
+    margin: 20px 0 0 -8px;
+    color: $primary-color; 
+    line-height: 100%;
+    font-size: 64pt;
+    text-decoration: none;
 }
 
 .logo:hover {
     cursor: pointer;
-}
-
-.header {
-    color: $primary-color; 
-    line-height: 100%;
-    font-size: 64pt;
-    margin-left: -8px;
 }
 
 .active span {

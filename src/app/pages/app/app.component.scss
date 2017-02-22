@@ -1,11 +1,6 @@
 @import "../../styles/palette.scss";
 
-md-sidenav-container {
-    height: 100%;
+.body {
     // background-color: $primary-color;
     background: linear-gradient(45deg, $primary-color-light 0%, $primary-color-lighter 100%);
-}
-
-md-sidenav {
-    background-color: $dark-gray;
 }
