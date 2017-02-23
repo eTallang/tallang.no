@@ -20,7 +20,8 @@
       "styles": [
         "styles.scss",
         "app/styles/angular-material-theme.scss",
-        "app/styles/index.scss"
+        "app/styles/index.scss",
+        "../node_modules/normalize.css"
       ],
       "scripts": [],
       "environments": {
