@@ -7,7 +7,7 @@ import { Component, OnChanges, OnDestroy, Input } from '@angular/core';
 })
 export class MusicPlayerComponent implements OnChanges, OnDestroy {
   isPlaying = false;
-  @Input() url: string = 'http://tallang.no/old/content/msc/Mads%20solo.ogg';
+  @Input() url = '';
   player = new Audio();
   progress: any;
 
