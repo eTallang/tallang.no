@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MoviesService } from '../../services';
+
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-  title = 'Movies';
-  // subtitle = 'all home made';
 
-  constructor() { }
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
+    this.moviesService.getYoutubeVideos()
+    .subscribe(result => console.log(result));
   }
 
 }
