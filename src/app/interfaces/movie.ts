@@ -13,6 +13,7 @@ export interface Thumbnails {
 };
 
 export interface Movie {
+    url: any;
     description: string;
     publishedAt: string;
     title: string;

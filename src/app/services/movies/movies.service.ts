@@ -9,6 +9,6 @@ export class MoviesService {
   constructor(private http: Http) { }
 
   getYoutubeVideos() {
-    return this.http.get(this.url).map(result => result.json());
+    return this.http.get(this.url).map(result => result.json().items.map(item => item.snippet));
   }
 }

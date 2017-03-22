@@ -1,11 +1,70 @@
 @import '../../styles/palette.scss';
 
+.highlight {
+    background: white;
+}
+
+.highlight-row {
+    padding: 160px 0;
+}
+
+.video-row {
+    margin: 0 40px;
+}
+
+.video-wrapper {
+    margin-top: 60px;
+}
+
+.aspect-ratio {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.2%;
+    min-width: 100px;
+}
+
+.aspect-ratio iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.align-right {
+    text-align: right;
+}
+
+.inverse-color {
+    h1 {
+        background: $gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    strong, p {
+        color: #222;
+    }
+}
+
 h1 {
-    line-height: 50pt;
-    text-align: center;
-    font-size: 160pt;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
-    transform: rotate(-8deg);
-    color: $accent-color;
-    margin: 0;
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 100;
+    color: white;
+    font-size: 5.3rem;
+}
+
+.info {
+    margin-right: 20px;
+    font-family: 'Yantramanav', sans-serif;
+    color: white;
+
+    p {
+        margin-top: 0;
+    }
+
+    strong {
+        font-size: 14pt;
+    }
 }
