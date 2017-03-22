@@ -5,7 +5,7 @@
     <a *ngFor="let tab of tabs"
         fxLayoutAlign="center center"
         [routerLink]="[tab.url]"
-        [ngClass]="{'active': router.url.slice(1, router.url.length) === tab.url}">
+        routerLinkActive="active">
         <span [ngClass]="tab.icon"></span>
     </a>
   </div>
