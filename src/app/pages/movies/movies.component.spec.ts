@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { MoviesComponent } from './movies.component';
+import { MoviesService, MoviesServiceMock } from '../../services';
 
 describe('MoviesComponent', () => {
   let component: MoviesComponent;
@@ -11,7 +12,11 @@ describe('MoviesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoviesComponent ]
+      declarations: [ MoviesComponent ],
+      providers:
+      [
+        { provide: MoviesService, useClass: MoviesServiceMock }
+      ]
     })
     .compileComponents();
   }));

@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { MusicComponent } from './music.component';
+import { MusicPlayerComponent } from '../../ui';
 
 describe('MusicComponent', () => {
   let component: MusicComponent;
@@ -11,7 +12,7 @@ describe('MusicComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MusicComponent ]
+      declarations: [ MusicComponent, MusicPlayerComponent ]
     })
     .compileComponents();
   }));

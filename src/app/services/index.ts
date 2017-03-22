@@ -1,7 +1,9 @@
 export { ApiService } from './api';
 export { PicturesService } from './pictures/pictures.service';
+export { PicturesServiceMock } from './pictures/pictures.service.mock';
 export { MusicService } from './music/music.service';
 export { MoviesService } from './movies/movies.service';
+export { MoviesServiceMock } from './movies/movies.service.mock';
 export { OtherService } from './other/other.service';
 export { AuthService } from './auth/auth.service';
 export { Store } from './store/store';

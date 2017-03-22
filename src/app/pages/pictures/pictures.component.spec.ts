@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { PicturesComponent } from './pictures.component';
+import { ImageComponent } from '../../ui';
+import { PicturesService, PicturesServiceMock } from '../../services';
 
 describe('PicturesComponent', () => {
   let component: PicturesComponent;
@@ -11,7 +13,11 @@ describe('PicturesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PicturesComponent ]
+      declarations: [ PicturesComponent, ImageComponent ],
+      providers:
+      [
+        { provide: PicturesService, useClass: PicturesServiceMock }
+      ]
     })
     .compileComponents();
   }));
