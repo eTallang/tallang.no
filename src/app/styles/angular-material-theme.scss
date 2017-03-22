@@ -1,23 +1,17 @@
 @import '~@angular/material/core/theming/all-theme';
-// Plus imports for other components in your app.
 
-// Include the base styles for Angular Material core. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-@include md-core();
+@include mat-core();
 
 // Red theme
-$red-app-primary: md-palette($md-red, 800, 400, A700);
-$red-app-accent:  md-palette($md-grey, 500, 50, 900);
-$red-app-warn:    md-palette($md-red);
-$red-app-theme:   md-light-theme($red-app-primary, $red-app-accent, $red-app-warn);
+$red-app-primary: mat-palette($mat-red, 800, 400, A700);
+$red-app-accent:  mat-palette($mat-grey, 500, 50, 900);
+$red-app-warn:    mat-palette($mat-red);
+$red-app-theme:   mat-light-theme($red-app-primary, $red-app-accent, $red-app-warn);
 
 // Teal theme
-$teal-app-primary: md-palette($md-teal, 700, 400, A700);
-$teal-app-accent:  md-palette($md-amber, 500, 300, 800);
-$teal-app-warn:    md-palette($md-red);
-$teal-app-theme:   md-light-theme($teal-app-primary, $teal-app-accent, $teal-app-warn);
+$teal-app-primary: mat-palette($mat-teal, 700, 400, A700);
+$teal-app-accent:  mat-palette($mat-amber, 500, 300, 800);
+$teal-app-warn:    mat-palette($mat-red);
+$teal-app-theme:   mat-light-theme($teal-app-primary, $teal-app-accent, $teal-app-warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include angular-material-theme($teal-app-theme);
