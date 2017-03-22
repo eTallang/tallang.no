@@ -2,17 +2,17 @@
     <div fxLayout="column" *ngFor="let movie of movies; let i = index">
         <div [ngClass]="{highlight: i%2 === 1}" class="highlight-row">
             <div fxLayout="row" fxLayoutGap="20px" fxLayout.sm="column" class="video-row" fxLayoutAlign="space-around stretch">
-                <div fxFlex [ngStyle]="{order: i%2}">
-                    <div class="aspect-ratio">
-                        <iframe [src]="movie.url"></iframe>
-                    </div>
-                </div>
-                <div class="info" fxFlex [ngClass]="{'align-right': i%2 === 1, 'inverse-color': i%2 === 1}">
+                <div class="info" fxFlex [ngClass]="{'align-right': i%2 === 0, 'inverse-color': i%2 === 1}" [ngStyle]="{order: i%2}">
                     <h1>{{movie.title}}</h1>
                     <strong>Description</strong>
                     <p>{{movie.description}}</p>
                     <strong>Published</strong>
                     <p>{{movie.publishedAt | date:'fullDate'}}</p>
+                </div>
+                <div fxFlex>
+                    <div class="aspect-ratio">
+                        <iframe [src]="movie.url"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
