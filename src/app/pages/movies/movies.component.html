@@ -1,20 +1,36 @@
 <div class="video-wrapper">
     <div fxLayout="column" *ngFor="let movie of movies; let i = index">
-        <div [ngClass]="{highlight: i%2 === 1}" class="highlight-row">
-            <div fxLayout="row" fxLayoutGap="20px" fxLayout.sm="column" class="video-row" fxLayoutAlign="space-around stretch">
-                <div class="info" fxFlex [ngClass]="{'align-right': i%2 === 0, 'inverse-color': i%2 === 1}" [ngStyle]="{order: i%2}">
-                    <h1>{{movie.title}}</h1>
+        <div [ngClass]="{highlight: i%2 === 1}" class="movie-row">
+            <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="20px" class="video-row" fxLayoutAlign="space-around stretch" *ngIf="i%2 === 0; else movieLeft">
+                <div [ngStyle.gt-sm]="{order: 1}" fxFlex>
+                    <div class="aspect-ratio">
+                        <iframe [src]="movie.url"></iframe>
+                    </div>
+                </div>
+                <div class="info" [ngClass.gt-sm]="['align-right', 'small-margin']" fxFlex>
+                    <h1 [ngStyle.xs]="{'font-size.em': 3.5}">{{movie.title}}</h1>
                     <strong>Description</strong>
                     <p>{{movie.description}}</p>
                     <strong>Published</strong>
                     <p>{{movie.publishedAt | date:'fullDate'}}</p>
                 </div>
-                <div fxFlex>
-                    <div class="aspect-ratio">
-                        <iframe [src]="movie.url"></iframe>
+            </div>
+            <ng-template #movieLeft>
+                <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="20px" class="video-row inverse-color" fxLayoutAlign="space-around stretch">
+                    <div fxFlex>
+                        <div class="aspect-ratio">
+                            <iframe [src]="movie.url"></iframe>
+                        </div>
+                    </div>
+                    <div class="info" [ngClass.gt-sm]="small-margin" fxFlex>
+                        <h1 [ngStyle.xs]="{'font-size.em': 3.5}">{{movie.title}}</h1>
+                        <strong>Description</strong>
+                        <p>{{movie.description}}</p>
+                        <strong>Published</strong>
+                        <p>{{movie.publishedAt | date:'fullDate'}}</p>
                     </div>
                 </div>
-            </div>
+            </ng-template>
         </div>
     </div>
 </div>

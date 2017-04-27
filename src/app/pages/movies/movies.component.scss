@@ -4,7 +4,7 @@
     background: white;
 }
 
-.highlight-row {
+.movie-row {
     padding: 160px 0;
 }
 
@@ -57,7 +57,6 @@ h1 {
 }
 
 .info {
-    margin-left: 20px;
     font-family: 'Yantramanav', sans-serif;
     color: white;
 
@@ -68,4 +67,8 @@ h1 {
     strong {
         font-size: 14pt;
     }
+}
+
+.small-margin {
+    margin: 0 20px;
 }

@@ -26,6 +26,5 @@ export class MoviesComponent implements OnInit {
   sanitize(movie: Movie) {
     const fullUrl = this.youtubeUrlRoot + movie.resourceId.videoId;
     movie.url = this.sanitizer.bypassSecurityTrustResourceUrl(fullUrl);
-    console.log(movie);
   }
 }
