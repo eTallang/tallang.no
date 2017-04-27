@@ -1,13 +1,5 @@
-import { Component,
-  OnInit,
-  Input,
-  Output,
-  EventEmitter,
-  trigger,
-  state,
-  style,
-  transition,
-  animate } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-image',

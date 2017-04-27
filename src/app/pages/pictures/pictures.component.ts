@@ -1,11 +1,6 @@
-import {
-  Component,
-  OnInit,
-  trigger,
-  state,
-  style,
-  transition,
-  animate } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+
 import { PicturesService } from '../../services';
 
 export interface Picture {
@@ -50,9 +45,9 @@ export class PicturesComponent implements OnInit {
 
   ngOnInit() {
     this.picturesService.getPhotos().then(snapshot => {
-      let val = snapshot.val();
-      for (let key of Object.keys(val)) {
-        let url = val[key];
+      const val = snapshot.val();
+      for (const key of Object.keys(val)) {
+        const url = val[key];
         this.pictures.push(this.createNewPictureFromUrl(url));
       }
     });

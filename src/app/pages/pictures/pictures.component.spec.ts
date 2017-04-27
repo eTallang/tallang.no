@@ -1,6 +1,5 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DebugElement } from '@angular/core';
 
 import { PicturesComponent } from './pictures.component';
@@ -17,7 +16,8 @@ describe('PicturesComponent', () => {
       providers:
       [
         { provide: PicturesService, useClass: PicturesServiceMock }
-      ]
+      ],
+      imports: [ BrowserAnimationsModule ]
     })
     .compileComponents();
   }));
