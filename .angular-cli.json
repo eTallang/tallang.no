@@ -20,8 +20,7 @@
       "prefix": "tallang",
       "styles": [
         "styles.scss",
-        "app/styles/angular-material-theme.scss",
-        "app/styles/index.scss",
+        "styles/angular-material-theme.scss",
         "../node_modules/normalize.css"
       ],
       "scripts": [],

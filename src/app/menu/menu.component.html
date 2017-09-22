@@ -1,0 +1,21 @@
+<nav fxLayout="column" fxLayout.xs="row">
+  <a routerLink="''" class="logo" fxHide.xs>t</a>
+  <div fxFlex="5%" fxHide.xs></div>
+  <div fxLayout="column" fxLayout.xs="row" class="menu-buttons">
+    <a *ngFor="let tab of tabs"
+        fxLayoutAlign="center center"
+        [routerLink]="['', tab.url]"
+        routerLinkActive="active">
+        <span [ngClass]="tab.icon"></span>
+    </a>
+  </div>
+  <div fxFlex></div>
+  <a class="footer" fxLayoutAlign="center end" routerLink="login" *ngIf="!authService.isSignedIn; else signOut">
+    <span>Sign in</span>
+  </a>
+  <ng-template #signOut>
+    <a class="footer" fxLayoutAlign="center end" *ngIf="isSignedIn" (click)="signOut()">
+      <span>Sign out</span>
+    </a>
+  </ng-template>
+</nav>

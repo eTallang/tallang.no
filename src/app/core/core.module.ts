@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import * as firebase from 'firebase';
+import './rxjs-dependencies';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyAuKdJ5hsSN98XrByybfc5zqxnLoHaFwGY',
@@ -13,11 +14,17 @@ export const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+import { AuthService, ToastService } from './';
+
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule
+  ],
+  providers: [
+    AuthService,
+    ToastService
   ],
   exports: [
     BrowserModule,

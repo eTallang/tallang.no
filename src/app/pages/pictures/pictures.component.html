@@ -1,7 +1,0 @@
-<img [@fadeUp]="showLargePicture" [@scale]="showLargePicture" src="{{largePictureUrl}}" class="largePicture">
-<div [@fadeUp]="showLargePicture" class="overlay" (click)="imageClicked(null)"></div>
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutWrap>
-  <div class="image-container" fxFlex="50" *ngFor="let picture of pictures">
-    <app-image [url]="picture.url" (clicked)="imageClicked($event)"></app-image>
-  </div>
-</div>
