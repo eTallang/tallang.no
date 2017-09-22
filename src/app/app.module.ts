@@ -1,10 +1,7 @@
-import { MdButtonModule, MdSnackBarModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CoreModule } from './core/core.module';
 
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 import {
   MenuComponent,
@@ -43,10 +40,7 @@ import {
   ],
   imports: [
     CoreModule,
-    MdButtonModule,
-    MdSnackBarModule,
-    FlexLayoutModule,
-    FormsModule,
+    SharedModule,
     routes
   ],
   providers: [
