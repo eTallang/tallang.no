@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 
 import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
 import { routes } from './routes';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
+import { MainModule } from './main/main.module';
 
 @NgModule({
   imports: [
     CoreModule,
-    SharedModule,
+    MainModule,
     routes
   ],
   declarations: [
     AppComponent,
-    MenuComponent
   ],
   bootstrap: [ AppComponent ]
 })

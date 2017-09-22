@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AuthService, ToastService } from '../core';
+import { AuthService, ToastService } from '../../core';
 
 export interface Tab {
   url: string;

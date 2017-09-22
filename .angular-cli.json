@@ -19,9 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "tallang",
       "styles": [
+        "styles/reset.css",
         "styles.scss",
-        "styles/theme.scss",
-        "../node_modules/normalize.css"
+        "styles/theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

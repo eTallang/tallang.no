@@ -10,10 +10,10 @@
     </a>
   </div>
   <div fxFlex></div>
-  <a class="footer" fxLayoutAlign="center end" routerLink="login" *ngIf="!authService.isSignedIn; else signOut">
+  <a class="footer" fxLayoutAlign="center end" routerLink="login" *ngIf="!authService.isSignedIn; else signOutLink">
     <span>Sign in</span>
   </a>
-  <ng-template #signOut>
+  <ng-template #signOutLink>
     <a class="footer" fxLayoutAlign="center end" *ngIf="isSignedIn" (click)="signOut()">
       <span>Sign out</span>
     </a>
