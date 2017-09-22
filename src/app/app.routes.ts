@@ -8,7 +8,7 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
         component: MainComponent,
         children: [
             {
-                path: '',
+                path: 'pictures',
                 loadChildren: 'app/pictures/pictures.module#PicturesModule'
             },
             {

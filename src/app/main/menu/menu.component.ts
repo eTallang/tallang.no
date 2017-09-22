@@ -13,13 +13,13 @@ export interface Tab {
 export class MenuComponent {
   tabs: Tab[] = [
     {
-      url: '',
+      url: 'pictures',
       icon: 'icon-camera'
     },
-    {
-      url: 'music',
-      icon: 'icon-music-tone'
-    },
+    // {
+    //   url: 'music',
+    //   icon: 'icon-music-tone'
+    // },
     {
       url: 'movies',
       icon: 'icon-film'
