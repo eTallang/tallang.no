@@ -12,10 +12,6 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
                 loadChildren: 'app/pictures/pictures.module#PicturesModule'
             },
             {
-                path: 'login',
-                loadChildren: 'app/login/login.module#LoginModule'
-            },
-            {
                 path: 'movies',
                 loadChildren: 'app/movies/movies.module#MoviesModule'
             },

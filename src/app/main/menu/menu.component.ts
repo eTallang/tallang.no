@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { AuthService, ToastService } from '../../core';
-
 export interface Tab {
   url: string;
   icon: string;
@@ -13,7 +11,6 @@ export interface Tab {
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
-  isSignedIn: boolean;
   tabs: Tab[] = [
     {
       url: '',
@@ -28,15 +25,4 @@ export class MenuComponent {
       icon: 'icon-film'
     }
   ];
-
-  constructor(public authService: AuthService, private toastService: ToastService) { }
-
-  signOut() {
-    this.authService.logout()
-    .then(result => {
-      this.toastService.showMessage('Signed out succesfully!');
-    }).catch(error => {
-      this.toastService.showMessage('Woops! Try signing out again.');
-    });
-  }
 }

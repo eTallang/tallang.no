@@ -8,13 +8,4 @@
       <span [ngClass]="tab.icon"></span>
     </a>
   </div>
-  <div fxFlex></div>
-  <a class="footer" fxLayoutAlign="center end" routerLink="login" *ngIf="!authService.isSignedIn; else signOutLink">
-    <span>Sign in</span>
-  </a>
-  <ng-template #signOutLink>
-    <a class="footer" fxLayoutAlign="center end" *ngIf="isSignedIn" (click)="signOut()">
-      <span>Sign out</span>
-    </a>
-  </ng-template>
 </nav>
