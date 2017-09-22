@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { MenuComponent } from './menu.component';
-import { AuthService, AuthServiceMock, ToastService, ToastServiceMock } from '../core';
+import { ToastService, ToastServiceMock } from '../core';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -13,7 +13,6 @@ describe('MenuComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ MenuComponent ],
       providers: [
-        { provide: AuthService, useClass: AuthServiceMock },
         { provide: ToastService, useClass: ToastServiceMock } ],
       imports: [ RouterTestingModule ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

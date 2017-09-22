@@ -14,7 +14,7 @@ export const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-import { AuthService, ToastService } from './';
+import { ToastService } from './';
 
 @NgModule({
   imports: [
@@ -23,7 +23,6 @@ import { AuthService, ToastService } from './';
     HttpModule
   ],
   providers: [
-    AuthService,
     ToastService
   ],
   exports: [
