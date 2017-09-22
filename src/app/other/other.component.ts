@@ -1,17 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-other',
+  selector: 'tallang-other',
   templateUrl: './other.component.html',
   styleUrls: ['./other.component.scss']
 })
-export class OtherComponent implements OnInit {
+export class OtherComponent {
   title = 'Other';
   subtitle = 'files';
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

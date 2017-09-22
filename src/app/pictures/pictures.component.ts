@@ -54,26 +54,12 @@ export class PicturesComponent implements OnInit {
   }
 
   createNewPictureFromUrl(url: string): Picture {
-    const ratio = this.createRandomNumber();
+    const ratio = 1;
     return {
       width: ratio,
       height: ratio,
       url: url
     };
-  }
-
-  createRandomNumber(maxValue?: number): number {
-    const defaultvalue = 1;
-    if (!maxValue) {
-      maxValue = defaultvalue;
-    }
-
-    const value = Math.round((Math.random() * maxValue));
-    if (value === 0) {
-      return 1;
-    }
-
-    return value;
   }
 
   imageClicked(url: string) {
