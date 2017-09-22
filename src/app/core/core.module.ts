@@ -14,16 +14,11 @@ export const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-import { ToastService } from './';
-
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule
-  ],
-  providers: [
-    ToastService
   ],
   exports: [
     BrowserModule,

@@ -3,7 +3,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { MenuComponent } from './menu.component';
-import { ToastService, ToastServiceMock } from '../core';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -12,8 +11,6 @@ describe('MenuComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MenuComponent ],
-      providers: [
-        { provide: ToastService, useClass: ToastServiceMock } ],
       imports: [ RouterTestingModule ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })

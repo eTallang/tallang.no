@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { MdButtonModule, MdSnackBarModule } from '@angular/material';
+import { MdButtonModule } from '@angular/material';
 
 const materialDependencies = [
-  MdButtonModule,
-  MdSnackBarModule
+  MdButtonModule
 ];
 
 @NgModule({
