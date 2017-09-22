@@ -1,5 +1,5 @@
-import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { MainComponent } from './main/main.component';
 
 export const routes: ModuleWithProviders = RouterModule.forRoot([
@@ -25,4 +25,4 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
         path: '**',
         redirectTo: ''
     }
-]);
+], { preloadingStrategy: PreloadAllModules });

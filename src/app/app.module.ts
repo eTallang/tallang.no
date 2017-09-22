@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { CoreModule } from './core/core.module';
-import { routes } from './routes';
+import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { MainModule } from './main/main.module';
 
