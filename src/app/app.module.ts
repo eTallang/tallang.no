@@ -1,4 +1,4 @@
-import { MaterialModule } from '@angular/material';
+import { MdButtonModule, MdSnackBarModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -51,7 +51,8 @@ firebase.initializeApp(firebaseConfig);
     MusicPlayerComponent
   ],
   imports: [
-    MaterialModule,
+    MdButtonModule,
+    MdSnackBarModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     BrowserModule,
