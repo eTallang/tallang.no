@@ -26,10 +26,6 @@ export class MenuComponent {
     {
       url: 'movies',
       icon: 'icon-film'
-    },
-    {
-      url: 'other',
-      icon: 'icon-folder'
     }
   ];
 

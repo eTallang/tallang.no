@@ -22,11 +22,7 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
             {
                 path: 'music',
                 loadChildren: 'app/music/music.module#MusicModule'
-            },
-            {
-                path: 'other',
-                loadChildren: 'app/other/other.module#OtherModule'
-            },
+            }
         ]
     },
     {
