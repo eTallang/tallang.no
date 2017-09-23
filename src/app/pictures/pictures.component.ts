@@ -2,12 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { PicturesService } from './pictures/pictures.service';
-
-export interface Picture {
-  width: number;
-  height: number;
-  url: string;
-}
+import { Photo } from './photo';
 
 @Component({
   selector: 'tallang-pictures',
@@ -37,39 +32,21 @@ export interface Picture {
   ]
 })
 export class PicturesComponent implements OnInit {
-  largePictureUrl: string;
-  showLargePicture = 0;
-  pictures: Picture[] = [];
+  selectedPhoto: Photo;
+  pictures: Photo[] = [];
 
   constructor(private picturesService: PicturesService) { }
 
   ngOnInit() {
-    // this.picturesService.getPhotos().then(snapshot => {
-    //   const val = snapshot.val();
-    //   for (const key of Object.keys(val)) {
-    //     const url = val[key];
-    //     this.pictures.push(this.createNewPictureFromUrl(url));
-    //   }
-    // });
-    this.picturesService.getPhotos().subscribe(res => console.log(res));
+    this.picturesService.getPhotos()
+    .subscribe(pictures => this.pictures = pictures);
   }
 
-  createNewPictureFromUrl(url: string): Picture {
-    const ratio = 1;
-    return {
-      width: ratio,
-      height: ratio,
-      url: url
-    };
+  selectedPhotoClosed() {
+    this.selectedPhoto = null;
   }
 
-  imageClicked(url: string) {
-    this.largePictureUrl = url;
-
-    if (this.largePictureUrl) {
-      this.showLargePicture = 1;
-    } else {
-      this.showLargePicture = 0;
-    }
+  setSelectedPhoto(selectedPhoto: Photo) {
+    this.selectedPhoto = selectedPhoto;
   }
 }
