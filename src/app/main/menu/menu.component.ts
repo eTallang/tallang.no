@@ -13,7 +13,7 @@ export interface Tab {
 export class MenuComponent {
   tabs: Tab[] = [
     {
-      url: 'pictures',
+      url: 'photos',
       icon: 'icon-camera'
     },
     // {

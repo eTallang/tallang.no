@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-import { PicturesService } from './pictures/pictures.service';
+import { PhotosService } from './service/photos.service';
 import { Photo } from './photo';
 
 @Component({
-  selector: 'tallang-pictures',
-  templateUrl: './pictures.component.html',
-  styleUrls: ['./pictures.component.scss'],
+  selector: 'tallang-photos',
+  templateUrl: './photos.component.html',
+  styleUrls: ['./photos.component.scss'],
   animations: [
     trigger('fadeUp', [
       state('1', style({
@@ -31,15 +31,15 @@ import { Photo } from './photo';
     ])
   ]
 })
-export class PicturesComponent implements OnInit {
+export class PhotosComponent implements OnInit {
   selectedPhoto: Photo;
-  pictures: Photo[] = [];
+  photos: Photo[] = [];
 
-  constructor(private picturesService: PicturesService) { }
+  constructor(private photoService: PhotosService) { }
 
   ngOnInit() {
-    this.picturesService.getPhotos()
-    .subscribe(pictures => this.pictures = pictures);
+    this.photoService.getPhotos()
+    .subscribe(pictures => this.photos = pictures);
   }
 
   selectedPhotoClosed() {

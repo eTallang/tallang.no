@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 
-export class PicturesServiceMock {
+export class PhotosServiceMock {
   getPhotos() {
     return Observable.of({}).toPromise();
   }

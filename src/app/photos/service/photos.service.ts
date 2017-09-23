@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Photo } from '../photo';
 
 @Injectable()
-export class PicturesService {
+export class PhotosService {
   path = 'https://api.500px.com/v1/photos';
   feature = 'user';
   username = 'etallang';

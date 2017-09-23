@@ -10,11 +10,11 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
             {
                 path: '',
                 pathMatch: 'full',
-                redirectTo: 'pictures'
+                redirectTo: 'photos'
             },
             {
-                path: 'pictures',
-                loadChildren: 'app/pictures/pictures.module#PicturesModule'
+                path: 'photos',
+                loadChildren: 'app/photos/photos.module#PhotosModule'
             },
             {
                 path: 'movies',
