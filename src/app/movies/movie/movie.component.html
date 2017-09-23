@@ -1,3 +1,30 @@
-<p>
-  movie works!
-</p>
+<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="20px" class="video-row" fxLayoutAlign="space-around stretch" *ngIf="!rtl; else movieLeft">
+  <div [ngStyle.gt-sm]="{order: 1}" fxFlex>
+    <div class="aspect-ratio">
+      <iframe [src]="movie.url"></iframe>
+    </div>
+  </div>
+  <div class="info" [ngClass.gt-sm]="['align-right', 'small-margin']" fxFlex>
+    <h1 [ngStyle.xs]="{'font-size.em': 3.5}">{{movie.title}}</h1>
+    <strong>Description</strong>
+    <pre>{{movie.description}}</pre>
+    <strong>Published</strong>
+    <p>{{movie.publishedAt | date:'fullDate'}}</p>
+  </div>
+</div>
+<ng-template #movieLeft>
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="20px" class="video-row inverse-color" fxLayoutAlign="space-around stretch">
+    <div fxFlex>
+      <div class="aspect-ratio">
+        <iframe [src]="movie.url"></iframe>
+      </div>
+    </div>
+    <div class="info" [ngClass.gt-sm]="'small-margin'" fxFlex>
+      <h1 [ngStyle.xs]="{'font-size.em': 3.5}">{{movie.title}}</h1>
+      <strong>Description</strong>
+      <pre>{{movie.description}}</pre>
+      <strong>Published</strong>
+      <p>{{movie.publishedAt | date:'fullDate'}}</p>
+    </div>
+  </div>
+</ng-template>

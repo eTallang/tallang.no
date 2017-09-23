@@ -1,0 +1,64 @@
+@import '../../../styles/palette.scss';
+
+.aspect-ratio {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.2%;
+    min-width: 100px;
+}
+
+.aspect-ratio iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+h1 {
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 100;
+    color: white;
+    font-size: 5.3rem;
+}
+
+.info {
+    font-family: 'Yantramanav', sans-serif;
+    color: white;
+
+    pre {
+        margin-top: 0;
+        white-space: pre-line;
+        word-break: break-word;
+    }
+
+    strong {
+        font-size: 14pt;
+    }
+}
+
+.inverse-color {
+    h1 {
+        background: $gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    strong, pre {
+        color: #222;
+    }
+}
+
+.video-row {
+    margin: 0 40px;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.small-margin {
+    margin: 0 20px;
+}
