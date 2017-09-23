@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { MoviesService } from './movies/movies.service';
+import { MoviesService } from './service/movies.service';
 import { Movie } from './movie';
 
 @Component({

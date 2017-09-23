@@ -2,8 +2,8 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MoviesComponent } from './movies.component';
-import { MoviesService } from './movies/movies.service';
-import { MoviesServiceMock } from './movies/movies.service.mock';
+import { MoviesService } from './service/movies.service';
+import { MoviesServiceMock } from './service/movies.service.mock';
 
 describe('MoviesComponent', () => {
   let component: MoviesComponent;
