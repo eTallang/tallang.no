@@ -1,30 +1,17 @@
-<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="20px" class="video-row" fxLayoutAlign="space-around stretch" *ngIf="!rtl; else movieLeft">
-  <div [ngStyle.gt-sm]="{order: 1}" fxFlex>
-    <div class="aspect-ratio">
-      <iframe [src]="movie.url"></iframe>
-    </div>
-  </div>
-  <div class="info" [ngClass.gt-sm]="['align-right', 'small-margin']" fxFlex>
-    <h1 [ngStyle.xs]="{'font-size.em': 3.5}">{{movie.title}}</h1>
+<!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="20px" class="video-row" *ngIf="!rtl; else movieLeft"> -->
+<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="40px">
+  <div fxFlex="60px" fxFlex.gt-sm="100px"></div>
+  <div class="info" [ngClass.gt-sm]="{'align-right': !rtl, 'inverse-color': rtl}" fxFlex [fxFlexOrder.gt-sm]="rtl ? 1 : 0">
+    <h1>{{movie.title}}</h1>
     <strong>Description</strong>
     <pre>{{movie.description}}</pre>
     <strong>Published</strong>
     <p>{{movie.publishedAt | date:'fullDate'}}</p>
   </div>
-</div>
-<ng-template #movieLeft>
-  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="20px" class="video-row inverse-color" fxLayoutAlign="space-around stretch">
-    <div fxFlex>
-      <div class="aspect-ratio">
-        <iframe [src]="movie.url"></iframe>
-      </div>
-    </div>
-    <div class="info" [ngClass.gt-sm]="'small-margin'" fxFlex>
-      <h1 [ngStyle.xs]="{'font-size.em': 3.5}">{{movie.title}}</h1>
-      <strong>Description</strong>
-      <pre>{{movie.description}}</pre>
-      <strong>Published</strong>
-      <p>{{movie.publishedAt | date:'fullDate'}}</p>
+  <div fxFlex>
+    <div class="aspect-ratio" fxFlex>
+      <iframe [src]="movie.url"></iframe>
     </div>
   </div>
-</ng-template>
+  <div fxFlex="60px" fxFlex.gt-sm="100px"></div>
+</div>
