@@ -1,0 +1,38 @@
+.backdrop {
+    background: black;
+}
+
+button.tallang-fullsize-photo-close-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, .8);
+    cursor: pointer;
+
+    &:hover, &:focus {
+        color: white;
+    }
+}
+
+md-dialog-container.mat-dialog-container {
+    padding: 0;
+    overflow-y: hidden;
+    line-height: 0;
+}
+
+img {
+    width: 100%;
+    user-select: none;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 1;
+}
+
+.cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, .7);
+}

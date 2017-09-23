@@ -3,6 +3,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { ObservableMedia } from '@angular/flex-layout';
 
 import { PhotosService } from './service/photos.service';
+import { PhotoContainerService } from '../photo/service/photo-container.service';
 import { Photo } from './photo';
 
 @Component({
@@ -33,11 +34,10 @@ import { Photo } from './photo';
   ]
 })
 export class PhotosComponent implements OnInit {
-  selectedPhoto: Photo;
   columns = 4;
   photos: Photo[] = [];
 
-  constructor(private photoService: PhotosService, private media: ObservableMedia) { }
+  constructor(private photoService: PhotosService, private media: ObservableMedia, private photoContainerService: PhotoContainerService) { }
 
   ngOnInit() {
     this.photoService.getPhotos()
@@ -53,11 +53,7 @@ export class PhotosComponent implements OnInit {
     });
   }
 
-  selectedPhotoClosed() {
-    this.selectedPhoto = null;
-  }
-
   setSelectedPhoto(selectedPhoto: Photo) {
-    this.selectedPhoto = selectedPhoto;
+    this.photoContainerService.openDialog(selectedPhoto).subscribe(res => console.log(res));
   }
 }
