@@ -1,29 +1,35 @@
-import { Component, OnChanges, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, Input } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'tallang-music-player',
   templateUrl: './music-player.component.html',
   styleUrls: ['./music-player.component.scss']
 })
-export class MusicPlayerComponent implements OnChanges, OnDestroy {
+export class MusicPlayerComponent implements OnInit, OnChanges, OnDestroy {
+  @Input() url = 'https://tallang.no/old/content/music/Mads.mp3';
   isPlaying = false;
-  @Input() url = '';
   player = new Audio();
-  progress: any;
+  currentTime: number;
+  duration: number;
 
-  constructor() {
-    this.player.src = this.url;
-    this.player.load();
-    this.player.addEventListener('timeupdate', function(event) {
-    });
+  ngOnInit() {
+    this.loadTrack();
   }
 
   ngOnChanges() {
-    this.player.src = this.url;
+    this.loadTrack();
   }
 
   ngOnDestroy() {
     this.player.pause();
+  }
+
+  loadTrack() {
+    this.player.src = this.url;
+    this.player.load();
+    const that = this;
+    console.log(this.player.duration);
   }
 
   togglePlay() {
@@ -35,13 +41,10 @@ export class MusicPlayerComponent implements OnChanges, OnDestroy {
   }
 
   goToBeginning() {
-    if (!this.player.paused) {
-      this.player.currentTime = 0;
-    }
+    this.player.currentTime = 0;
   }
 
   goToEnd() {
-    console.log(this.player);
+    this.player.currentTime = 0;
   }
-
 }
