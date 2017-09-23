@@ -13,7 +13,15 @@ export class PhotosService {
   constructor(private http: Http) {}
 
   getPhotos(): Observable<Photo[]> {
-    return this.http.get(`${this.path}?feature=${this.feature}&username=${this.username}&image_size=600,5&consumer_key=${this.key}`)
-    .map(res => res.json().photos);
+    const thumb_size = 600;
+    const orig_size = 5;
+    return this.http
+    .get(`${this.path}?feature=${this.feature}&username=${this.username}&image_size=${thumb_size},${orig_size}&consumer_key=${this.key}`)
+    .map(res => res.json().photos)
+    .map(photos => photos.map((photo: Photo) => {
+      photo.thumb_url = photo.images.find(i => i.size === thumb_size).url;
+      photo.original_url = photo.images.find(i => i.size === orig_size).url;
+      return photo;
+    }));
   }
 }

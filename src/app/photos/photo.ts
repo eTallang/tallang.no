@@ -25,4 +25,6 @@ export interface Photo {
   taken_at: Date;
   url: string;
   width: number;
+  thumb_url: string;
+  original_url: string;
 }

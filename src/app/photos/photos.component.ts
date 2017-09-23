@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ObservableMedia } from '@angular/flex-layout';
 
 import { PhotosService } from './service/photos.service';
 import { Photo } from './photo';
@@ -33,13 +34,23 @@ import { Photo } from './photo';
 })
 export class PhotosComponent implements OnInit {
   selectedPhoto: Photo;
+  columns = 4;
   photos: Photo[] = [];
 
-  constructor(private photoService: PhotosService) { }
+  constructor(private photoService: PhotosService, private media: ObservableMedia) { }
 
   ngOnInit() {
     this.photoService.getPhotos()
-    .subscribe(pictures => this.photos = pictures);
+    .subscribe(photos => this.photos = photos);
+
+    this.media.asObservable().subscribe(screenChange => {
+      switch (screenChange.mqAlias) {
+        case('xs'): this.columns = 1; break;
+        case('sm'): this.columns = 2; break;
+        case('md'): this.columns = 3; break;
+        default: this.columns = 4; break;
+      }
+    });
   }
 
   selectedPhotoClosed() {
