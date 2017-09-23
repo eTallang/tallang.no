@@ -19,7 +19,7 @@ export interface ChangePhotoEvent {
       transition('* => *', [
         query(':self', style({ opacity: 0, transform: 'translateY(-20px)' }), { optional: true }),
         query(':self',
-          animate('400ms cubic-bezier(0,.59,.39,1)', style({opacity: 1, transform: 'translateY(0)'})), { optional: true })
+          animate('1200ms 200ms cubic-bezier(0,.59,.39,1)', style({opacity: 1, transform: 'translateY(0)'})), { optional: true })
       ])
     ])
   ]
