@@ -1,5 +1,10 @@
 @import '../../../styles/palette.scss';
+@import '../../../styles/grid.scss';
 @import '~@angular/material/theming';
+
+.movie-container {
+    margin: 0 $gutter-16;
+}
 
 .aspect-ratio {
     position: relative;
@@ -23,16 +28,16 @@
     
     h1 {
         font-weight: 100;
-        font-size: 4.5rem;
+        font-size: 3.2rem;
     }
 
     strong {
-        margin-top: 20px;
+        margin-top: $gutter-32;
         display: inline-block;
         font-size: 1.6rem;
     }
 
-    pre {
+    pre, p {
         margin-top: 0;
         white-space: pre-line;
         word-break: break-word;
@@ -48,7 +53,7 @@
         -webkit-text-fill-color: transparent;
     }
 
-    strong, pre {
+    strong, pre, p {
         color: #222;
     }
 }
