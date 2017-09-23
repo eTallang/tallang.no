@@ -16,10 +16,10 @@ export class MenuComponent {
       url: 'photos',
       icon: 'icon-camera'
     },
-    // {
-    //   url: 'music',
-    //   icon: 'icon-music-tone'
-    // },
+    {
+      url: 'music',
+      icon: 'icon-music-tone'
+    },
     {
       url: 'movies',
       icon: 'icon-film'

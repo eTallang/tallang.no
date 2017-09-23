@@ -4,7 +4,7 @@ import { SharedModule } from '../shared';
 import { MusicRoutingModule } from './music-routing.module';
 import { MusicComponent } from './music.component';
 import { MusicPlayerComponent } from './music-player/music-player.component';
-import { MusicService } from './music/music.service';
+import { MusicService } from './service/music.service';
 
 
 @NgModule({
