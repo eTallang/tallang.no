@@ -7,4 +7,4 @@
 <button @fadeIn *ngIf="showControls" class="tallang-fullsize-photo-button tallang-fullsize-photo-next" (click)="nextPhoto()">
   <span class="icon-arrow-right"></span>
 </button>
-<img [src]="photo.original_url" draggable="false">
+<img [ngClass]="{'tallang-fullsize-photo-vertical-image': verticalPhoto}" class="tallang-fullsize-photo" [src]="photo.original_url" draggable="false">

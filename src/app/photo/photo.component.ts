@@ -28,6 +28,9 @@ export class PhotoComponent implements OnInit {
   photo: Photo;
   showControls = false;
   onChange = new EventEmitter<ChangePhotoEvent>();
+  get verticalPhoto() {
+    return this.photo.height > this.photo.width;
+  }
 
   constructor(public dialogRef: MdDialogRef<PhotoComponent>) { }
 

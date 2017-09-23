@@ -37,11 +37,18 @@ md-dialog-container.mat-dialog-container {
     padding: 0;
     overflow-y: hidden;
     line-height: 0;
+    background: transparent;
+    border-radius: 0;
 }
 
-img {
+img.tallang-fullsize-photo {
     width: 100%;
     user-select: none;
+}
+
+img.tallang-fullsize-photo-vertical-image {
+    width: auto;
+    max-height: 95vh;
 }
 
 .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
