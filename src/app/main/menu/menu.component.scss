@@ -15,7 +15,7 @@ nav {
     text-align: center;
     text-shadow: 1px 1px black;
     margin: 30px 0 50px -8px;
-    color: $primary-color; 
+    color: $primary; 
     line-height: 100%;
     font-size: 60px;
     text-decoration: none;
@@ -27,7 +27,7 @@ nav {
 
 .menu-buttons a {
     transition: 500ms all;
-    color: $primary-color-lighter;
+    color: $primary-lighter;
     padding: 34px 0;
     height: 48px;
     display: block;
@@ -45,14 +45,14 @@ nav {
 }
 
 .active span {
-    color: $accent-color;
+    color: $accent;
 }
 
 .footer {
     transition: 500ms all;
     padding: 20px 0;
     font-family: 'Pacifico', cursive;
-    color: $primary-color-light;
+    color: $primary-light;
     text-align: center; 
     font-size: 10pt;
     text-decoration: none;
@@ -68,15 +68,15 @@ nav {
 @media screen and (max-width: 599px) {
     nav {
         box-shadow: none;
-        height: 70px;
+        height: 60px;
         width: 100%;
         background: transparent;
     }
 
     .menu-buttons a {
-        padding-right: 20px;
-        padding-left: 20px;
         color: white;
+        padding: 30px 20px;
+        text-shadow: 1px 1px rgba(0, 0, 0, .8);
     }
 
     .footer {

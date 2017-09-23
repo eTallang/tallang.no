@@ -5,8 +5,8 @@
 html, body {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-    background: -webkit-linear-gradient(bottom left, $primary-color-dark 0%, $primary-color-lighter 100%);
-    background: -o-linear-gradient(bottom left, $primary-color-dark 0%, $primary-color-lighter 100%);
+    background: -webkit-linear-gradient(bottom left, $primary-dark 0%, $primary-lighter 100%);
+    background: -o-linear-gradient(bottom left, $primary-dark 0%, $primary-lighter 100%);
     background: $gradient;
     background-repeat: no-repeat;
     background-attachment: fixed;

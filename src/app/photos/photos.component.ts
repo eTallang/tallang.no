@@ -47,7 +47,7 @@ export class PhotosComponent implements OnInit {
 
     this.media.asObservable().subscribe(screenChange => {
       switch (screenChange.mqAlias) {
-        case('xs'): this.columns = 1; break;
+        case('xs'): this.columns = 2; break;
         case('sm'): this.columns = 2; break;
         case('md'): this.columns = 3; break;
         default: this.columns = 4; break;
