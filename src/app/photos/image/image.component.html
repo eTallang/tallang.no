@@ -1,1 +1,1 @@
-<img [@highlight]="isHovered" src="{{url}}" on-mouseover="isHovered = 1" on-mouseleave="isHovered = 0" (click)="imageClicked()">
+<img [@highlight]="mouseState" [src]="url" (mouseover)="mouseState = 'on'" (mouseleave)="mouseState = 'off'" (click)="imageClicked()">
