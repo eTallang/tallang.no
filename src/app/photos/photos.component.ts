@@ -4,6 +4,7 @@ import { ObservableMedia } from '@angular/flex-layout';
 
 import { PhotosService } from './service/photos.service';
 import { PhotoContainerService } from '../photo/service/photo-container.service';
+import { PhotoComponent, ChangePhotoEvent } from '../photo/photo.component';
 import { Photo } from './photo';
 
 @Component({
@@ -36,6 +37,7 @@ import { Photo } from './photo';
 export class PhotosComponent implements OnInit {
   columns = 4;
   photos: Photo[] = [];
+  largePhoto: PhotoComponent;
 
   constructor(private photoService: PhotosService, private media: ObservableMedia, private photoContainerService: PhotoContainerService) { }
 
@@ -53,7 +55,15 @@ export class PhotosComponent implements OnInit {
     });
   }
 
-  setSelectedPhoto(selectedPhoto: Photo) {
-    this.photoContainerService.openDialog(selectedPhoto).subscribe(res => console.log(res));
+  openPhoto(selectedPhoto: Photo) {
+    this.largePhoto = this.photoContainerService.openDialog(selectedPhoto);
+    this.largePhoto.onChange.subscribe((change: ChangePhotoEvent) => {
+      const index = this.photos.map(photo => photo.id).indexOf(change.photo_id);
+      if (change.direction === 'next' && this.photos.length > index + 1) {
+        this.photoContainerService.updatePhoto(this.photos[index + 1]);
+      } else if (change.direction === 'previous' && index !== 0) {
+        this.photoContainerService.updatePhoto(this.photos[index - 1]);
+      }
+    });
   }
 }

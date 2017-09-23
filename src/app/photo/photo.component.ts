@@ -1,8 +1,13 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, query } from '@angular/animations';
 import { MdDialogRef } from '@angular/material';
 
 import { Photo } from '../photos/photo';
+
+export interface ChangePhotoEvent {
+  direction: string;
+  photo_id: number;
+}
 
 @Component({
   selector: 'tallang-photo',
@@ -22,10 +27,25 @@ import { Photo } from '../photos/photo';
 export class PhotoComponent implements OnInit {
   photo: Photo;
   showControls = false;
+  onChange = new EventEmitter<ChangePhotoEvent>();
 
   constructor(public dialogRef: MdDialogRef<PhotoComponent>) { }
 
   ngOnInit() {
     this.dialogRef.afterOpen().subscribe(afterOpen => this.showControls = true);
+  }
+
+  nextPhoto() {
+    this.onChange.emit({
+      direction: 'next',
+      photo_id: this.photo.id
+    });
+  }
+
+  previousPhoto() {
+    this.onChange.emit({
+      direction: 'previous',
+      photo_id: this.photo.id
+    });
   }
 }

@@ -6,16 +6,21 @@ import { Photo } from '../../photos/photo';
 
 @Injectable()
 export class PhotoContainerService {
+  dialogRef: MdDialogRef<PhotoComponent>;
+
   constructor(private dialog: MdDialog) { }
 
   openDialog(photo: Photo) {
-    let dialogRef: MdDialogRef<PhotoComponent>;
 
-    dialogRef = this.dialog.open(PhotoComponent, {
+    this.dialogRef = this.dialog.open(PhotoComponent, {
       disableClose: true
     });
-    dialogRef.componentInstance.photo = photo;
+    this.dialogRef.componentInstance.photo = photo;
 
-    return dialogRef.afterClosed();
+    return this.dialogRef.componentInstance;
+  }
+
+  updatePhoto(photo: Photo) {
+    this.dialogRef.componentInstance.photo = photo;
   }
 }

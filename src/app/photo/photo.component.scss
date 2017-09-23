@@ -2,14 +2,29 @@
     background: black;
 }
 
-button.tallang-fullsize-photo-close-button {
+button.tallang-fullsize-photo-close {
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+}
+
+button.tallang-fullsize-photo-previous {
+    left: 20px;
+    top: 50%;
+    font-size: 30px;
+}
+
+button.tallang-fullsize-photo-next {
+    right: 20px;
+    top: 50%;
+    font-size: 30px;
+}
+
+button.tallang-fullsize-photo-button {
     background: transparent;
     border: none;
     outline: none;
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 20px;
     color: rgba(255, 255, 255, .8);
     cursor: pointer;
 

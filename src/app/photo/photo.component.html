@@ -1,4 +1,10 @@
-<button @fadeIn *ngIf="showControls" class="tallang-fullsize-photo-close-button" (click)="dialogRef.close(true)">
+<button @fadeIn *ngIf="showControls" class="tallang-fullsize-photo-button tallang-fullsize-photo-close" (click)="dialogRef.close(true)">
   <span class="icon-close"></span>
+</button>
+<button @fadeIn *ngIf="showControls" class="tallang-fullsize-photo-button tallang-fullsize-photo-previous" (click)="previousPhoto()">
+  <span class="icon-arrow-left"></span>
+</button>
+<button @fadeIn *ngIf="showControls" class="tallang-fullsize-photo-button tallang-fullsize-photo-next" (click)="nextPhoto()">
+  <span class="icon-arrow-right"></span>
 </button>
 <img [src]="photo.original_url" draggable="false">
