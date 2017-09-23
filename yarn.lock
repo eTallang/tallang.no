@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-"500px@0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/500px/-/500px-0.5.1.tgz#c8bedbdcd1442e1b68f541fc88589ab901c69a69"
-
 "@angular-devkit/build-optimizer@~0.0.18":
   version "0.0.21"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.0.21.tgz#d3100a179c570d3c45ba02f87486c931e8845e13"

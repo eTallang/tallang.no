@@ -13,7 +13,6 @@
   },
   "private": true,
   "dependencies": {
-    "500px": "0.5.1",
     "@angular/animations": "4.4.3",
     "@angular/cdk": "2.0.0-beta.11",
     "@angular/common": "4.4.3",

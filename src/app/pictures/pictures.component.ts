@@ -44,13 +44,14 @@ export class PicturesComponent implements OnInit {
   constructor(private picturesService: PicturesService) { }
 
   ngOnInit() {
-    this.picturesService.getPhotos().then(snapshot => {
-      const val = snapshot.val();
-      for (const key of Object.keys(val)) {
-        const url = val[key];
-        this.pictures.push(this.createNewPictureFromUrl(url));
-      }
-    });
+    // this.picturesService.getPhotos().then(snapshot => {
+    //   const val = snapshot.val();
+    //   for (const key of Object.keys(val)) {
+    //     const url = val[key];
+    //     this.pictures.push(this.createNewPictureFromUrl(url));
+    //   }
+    // });
+    this.picturesService.getPhotos().subscribe(res => console.log(res));
   }
 
   createNewPictureFromUrl(url: string): Picture {

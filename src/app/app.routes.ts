@@ -8,6 +8,11 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
         component: MainComponent,
         children: [
             {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'pictures'
+            },
+            {
                 path: 'pictures',
                 loadChildren: 'app/pictures/pictures.module#PicturesModule'
             },
