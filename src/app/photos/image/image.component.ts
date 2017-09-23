@@ -9,10 +9,10 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     trigger('highlight', [
       state('on', style({
         filter: 'brightness(100%)',
-        transform: 'scale(1.03)'
+        transform: 'scale(1.02)'
       })),
       state('off',   style({
-        filter: 'brightness(70%)',
+        filter: 'brightness(80%)',
         transform: 'scale(1.0)'
       })),
       transition('on <=> off', animate('500ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
