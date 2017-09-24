@@ -3,6 +3,7 @@
 }
 
 .top-navigation {
+    z-index: 9999;
     top: 20px;
     right: 20px;
     position: absolute;
@@ -27,6 +28,7 @@ button.navigation {
 }
 
 button.tallang-fullsize-photo-button {
+    z-index: 9999;
     background: transparent;
     border: none;
     outline: none;
