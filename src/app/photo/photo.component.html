@@ -1,13 +1,25 @@
-<div [@fadeIn]="showControls" *ngIf="showControls">
-  <button class="tallang-fullsize-photo-button tallang-fullsize-photo-close" (click)="dialogRef.close(true)">
-    <span class="icon-close"></span>
-  </button>
-  <button class="tallang-fullsize-photo-button tallang-fullsize-photo-previous" (click)="previousPhoto()">
-    <span class="icon-arrow-left"></span>
-  </button>
-  <button class="tallang-fullsize-photo-button tallang-fullsize-photo-next" (click)="nextPhoto()">
-    <span class="icon-arrow-right"></span>
-  </button>
+<div fxLayout="row">
+  <div fxFlex>
+    <div [@fadeIn]="showControls" *ngIf="showControls">
+      <div class="top-navigation">
+        <!-- <button class="tallang-fullsize-photo-button" (click)="toggleInfobar()">
+          <span class="icon-info"></span>
+        </button> -->
+        <button class="tallang-fullsize-photo-button" (click)="dialogRef.close(true)">
+          <span class="icon-close"></span>
+        </button>
+      </div>
+      <button class="tallang-fullsize-photo-button navigation previous" (click)="previousPhoto()">
+        <span class="icon-arrow-left"></span>
+      </button>
+      <button class="tallang-fullsize-photo-button navigation next" (click)="nextPhoto()">
+        <span class="icon-arrow-right"></span>
+      </button>
+    </div>
+    <img [ngClass]="{'tallang-fullsize-photo-vertical-image': verticalPhoto}" class="tallang-fullsize-photo" [src]="photo.original_url"
+    draggable="false">
+  </div>
+  <div fxFlex="400px" *ngIf="showInfobar">
+    <tallang-photo-info></tallang-photo-info>
+  </div>
 </div>
-<img [ngClass]="{'tallang-fullsize-photo-vertical-image': verticalPhoto}" class="tallang-fullsize-photo" [src]="photo.original_url"
-  draggable="false">

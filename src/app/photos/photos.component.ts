@@ -12,26 +12,6 @@ import { Photo } from './photo';
   templateUrl: './photos.component.html',
   styleUrls: ['./photos.component.scss'],
   animations: [
-    trigger('fadeUp', [
-      state('1', style({
-        display: 'block',
-        opacity: '1'
-      })),
-      state('0', style({
-        display: 'none',
-        opacity: '0',
-      })),
-      transition('1 <=> 0', animate('500ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
-    ]),
-    trigger('scale', [
-      state('1', style({
-        transform: 'scale(1) translate(-50%, -50%)',
-      })),
-      state('0', style({
-        transform: 'scale(0.5) translate(-50%, -50%)'
-      })),
-      transition('1 <=> 0', animate('500ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
-    ]),
     trigger('listAnimation', [
       transition('* => *', [
         query(':enter', style({ opacity: 0 }), { optional: true }),

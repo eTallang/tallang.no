@@ -8,14 +8,12 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('highlight', [
       state('on', style({
-        filter: 'brightness(100%)',
-        transform: 'scale(1.02)'
+        filter: 'brightness(115%)'
       })),
       state('off',   style({
-        filter: 'brightness(80%)',
-        transform: 'scale(1.0)'
+        filter: 'brightness(100%)'
       })),
-      transition('on <=> off', animate('500ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
+      transition('on <=> off', animate('300ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
     ])
   ]
 })

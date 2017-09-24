@@ -36,6 +36,7 @@ export interface ChangePhotoEvent {
 export class PhotoComponent implements OnInit {
   photo: Photo;
   showControls = false;
+  showInfobar = false;
   onChange = new EventEmitter<ChangePhotoEvent>();
   get verticalPhoto() {
     return this.photo.height > this.photo.width;
@@ -59,5 +60,9 @@ export class PhotoComponent implements OnInit {
       direction: 'previous',
       photo_id: this.photo.id
     });
+  }
+
+  toggleInfobar() {
+    this.showInfobar = !this.showInfobar;
   }
 }

@@ -2,29 +2,35 @@
     background: black;
 }
 
-button.tallang-fullsize-photo-close {
+.top-navigation {
     top: 20px;
     right: 20px;
-    font-size: 30px;
+    position: absolute;
+
+    button {
+        font-size: 30px;
+    }
 }
 
-button.tallang-fullsize-photo-previous {
-    left: 20px;
+button.navigation {
     top: 50%;
     font-size: 30px;
-}
+    position: absolute;
 
-button.tallang-fullsize-photo-next {
-    right: 20px;
-    top: 50%;
-    font-size: 30px;
+    &.next {
+        right: 20px;
+    }
+
+    &.previous {
+        left: 20px;
+    }
+    
 }
 
 button.tallang-fullsize-photo-button {
     background: transparent;
     border: none;
     outline: none;
-    position: absolute;
     color: rgba(255, 255, 255, .8);
     cursor: pointer;
 
