@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate, query, stagger, keyframes } from '@angular/animations';
 import { ObservableMedia } from '@angular/flex-layout';
 
 import { PhotosService } from './service/photos.service';
@@ -31,6 +31,17 @@ import { Photo } from './photo';
         transform: 'scale(0.5) translate(-50%, -50%)'
       })),
       transition('1 <=> 0', animate('500ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
+    ]),
+    trigger('listAnimation', [
+      transition('* => *', [
+        query(':enter', style({ opacity: 0 }), { optional: true }),
+        query(':enter', stagger('100ms', [
+          animate('700ms cubic-bezier(0,.59,.39,1)', keyframes([
+            style({ opacity: 0, offset: 0}),
+            style({ opacity: 1, offset: 1}),
+          ]))
+        ]), { optional: true } )
+      ])
     ])
   ]
 })

@@ -1,4 +1,4 @@
-<md-grid-list [cols]="columns" cols.sm="2" cols.xs="1" rowHeight="1:1" gutterSize="0">
+<md-grid-list [cols]="columns" cols.sm="2" cols.xs="1" rowHeight="1:1" gutterSize="0" [@listAnimation]="photos.length">
   <md-grid-tile *ngFor="let photo of photos">
     <tallang-image [url]="photo.thumb_url" (clicked)="openPhoto(photo)"></tallang-image>
   </md-grid-tile>
