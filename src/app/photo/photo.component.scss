@@ -16,7 +16,7 @@ button.navigation {
     top: 50%;
     font-size: 30px;
     position: absolute;
-
+    
     &.next {
         right: 20px;
     }
@@ -24,7 +24,6 @@ button.navigation {
     &.previous {
         left: 20px;
     }
-    
 }
 
 button.tallang-fullsize-photo-button {
@@ -33,9 +32,11 @@ button.tallang-fullsize-photo-button {
     outline: none;
     color: rgba(255, 255, 255, .8);
     cursor: pointer;
-
+    transition: 400ms all cubic-bezier(0,.59,.39,1);
+    
     &:hover, &:focus {
         color: white;
+        transform: scale(1.1);    
     }
 }
 
