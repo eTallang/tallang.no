@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, EventEmitter } from '@angular/core';
-import { trigger, style, transition, animate, query } from '@angular/animations';
+import { trigger, style, transition, animate, query, stagger } from '@angular/animations';
 import { MdDialogRef } from '@angular/material';
 
 import { Photo } from '../photos/photo';
@@ -17,9 +17,18 @@ export interface ChangePhotoEvent {
   animations: [
     trigger('fadeIn', [
       transition('* => *', [
-        query(':self', style({ opacity: 0, transform: 'translateY(-20px)' }), { optional: true }),
-        query(':self',
-          animate('1200ms 200ms cubic-bezier(0,.59,.39,1)', style({opacity: 1, transform: 'translateY(0)'})), { optional: true })
+        query('button',
+          style({ opacity: 0, transform: 'translateY(-20px)' }),
+          { optional: true }
+        ),
+        query('button',
+          stagger('100ms', [
+            animate('1200ms 200ms cubic-bezier(0,.59,.39,1)',
+              style({opacity: 1, transform: 'translateY(0)'})
+            )
+          ]),
+          { optional: true }
+        )
       ])
     ])
   ]
@@ -35,7 +44,7 @@ export class PhotoComponent implements OnInit {
   constructor(public dialogRef: MdDialogRef<PhotoComponent>) { }
 
   ngOnInit() {
-    this.dialogRef.afterOpen().subscribe(afterOpen => this.showControls = true);
+    this.dialogRef.afterOpen().subscribe(() => this.showControls = true);
   }
 
   nextPhoto() {
