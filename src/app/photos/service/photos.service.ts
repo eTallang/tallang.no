@@ -13,7 +13,7 @@ export class PhotosService {
   constructor(private http: Http) {}
 
   getPhotos(): Observable<Photo[]> {
-    const thumb_size = 600;
+    const thumb_size = 440;
     const orig_size = 5;
     return this.http
     .get(`${this.path}?feature=${this.feature}&username=${this.username}&image_size=${thumb_size},${orig_size}&consumer_key=${this.key}`)
