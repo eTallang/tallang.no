@@ -1,8 +1,13 @@
 import { Component, OnInit, ViewEncapsulation, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, query, stagger } from '@angular/animations';
 import { MdDialogRef } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
 
 import { Photo } from '../photos/photo';
+
+const ESCAPE = 27;
+const ARROW_RIGHT = 39;
+const ARROW_LEFT = 37;
 
 export interface ChangePhotoEvent {
   direction: string;
@@ -46,6 +51,7 @@ export class PhotoComponent implements OnInit {
 
   ngOnInit() {
     this.dialogRef.afterOpen().subscribe(() => this.showControls = true);
+    this.listenForKeyEvents();
   }
 
   nextPhoto() {
@@ -64,5 +70,18 @@ export class PhotoComponent implements OnInit {
 
   toggleInfobar() {
     this.showInfobar = !this.showInfobar;
+  }
+
+  listenForKeyEvents() {
+    Observable.fromEvent(window, 'keyup').subscribe((key: KeyboardEvent) => {
+      console.log(key);
+      if (key.keyCode === ARROW_LEFT) {
+        this.previousPhoto();
+      } else if (key.keyCode === ARROW_RIGHT) {
+        this.nextPhoto();
+      } else if (key.keyCode === ESCAPE) {
+        this.dialogRef.close();
+      }
+    });
   }
 }
