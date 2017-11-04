@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import './rxjs-dependencies';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule
+    HttpClientModule
   ],
   exports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule
+    HttpClientModule
   ]
 })
 export class CoreModule { }

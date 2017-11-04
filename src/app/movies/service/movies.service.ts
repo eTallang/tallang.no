@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class MoviesService {
@@ -7,9 +8,9 @@ export class MoviesService {
   key = 'key=AIzaSyAXBOXg5RmypyzLvZiymF2IK2KovQ9b2Sw';
   url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&${this.playlistId}&${this.key}`;
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getYoutubeVideos() {
-    return this.http.get(this.url).map(result => result.json().items.map(item => item.snippet));
+    return this.http.get(this.url).pipe(map((result: any) => result.items.map(item => item.snippet)));
   }
 }

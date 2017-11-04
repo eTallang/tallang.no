@@ -1,11 +1,11 @@
-<button md-button (click)="goToBeginning()">
+<button mat-button (click)="goToBeginning()">
   <span class="icon-control-start"></span>
 </button>
-<button md-button (click)="togglePlay()">
+<button mat-button (click)="togglePlay()">
   <span class="icon-control-play" *ngIf="this.player.paused"></span>
   <span class="icon-control-pause" *ngIf="!this.player.paused"></span>
 </button>
-<button md-button (click)="goToEnd()">
+<button mat-button (click)="goToEnd()">
   <span class="icon-control-end"></span>
 </button>
 <div class="currentPosition" [style.width]="player.currentTime/player.duration * 100 + '%'"></div>

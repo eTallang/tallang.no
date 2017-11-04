@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { MdDialogRef, MdDialog } from '@angular/material';
+import { MatDialogRef, MatDialog } from '@angular/material';
 
 import { PhotoComponent } from '../photo.component';
 import { Photo } from '../../photos/photo';
 
 @Injectable()
 export class PhotoContainerService {
-  dialogRef: MdDialogRef<PhotoComponent>;
+  dialogRef: MatDialogRef<PhotoComponent>;
 
-  constructor(private dialog: MdDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   openDialog(photo: Photo) {
 

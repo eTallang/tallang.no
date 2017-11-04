@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, query, stagger } from '@angular/animations';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 
 import { Photo } from '../photos/photo';
@@ -47,7 +47,7 @@ export class PhotoComponent implements OnInit {
     return this.photo.height > this.photo.width;
   }
 
-  constructor(public dialogRef: MdDialogRef<PhotoComponent>) { }
+  constructor(public dialogRef: MatDialogRef<PhotoComponent>) { }
 
   ngOnInit() {
     this.dialogRef.afterOpen().subscribe(() => this.showControls = true);

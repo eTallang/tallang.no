@@ -1,5 +1,5 @@
 import { TestBed, async, inject } from '@angular/core/testing';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { MoviesService } from './movies.service';
 
 class HttpMock {
@@ -13,7 +13,7 @@ describe('MoviesService', () => {
       providers:
       [
         MoviesService,
-        { provide: Http, useClass: HttpMock }
+        { provide: HttpClient, useClass: HttpMock }
       ]
     });
   });
