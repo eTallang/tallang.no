@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 
 import { CoreModule } from './core/core.module';
-import { routes } from './app.routes';
 import { AppComponent } from './app.component';
-import { MainModule } from './main/main.module';
+import { MenuModule } from './menu/menu.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
     CoreModule,
-    MainModule,
-    routes
+    MenuModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,

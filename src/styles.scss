@@ -1,21 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Pacifico|Yantramanav:100,300');
 @import './styles/palette.scss';
 
-html, body {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    background: -webkit-linear-gradient(bottom left, $primary-dark 0%, $primary-lighter 100%);
-    background: -o-linear-gradient(bottom left, $primary-dark 0%, $primary-lighter 100%);
-    background: $gradient;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+p,
+div,
+button,
+input,
+span {
+  font-family: 'Titillium Web', sans-serif;
 }
 
 @media screen and (max-width: 599px) {
-    html {
-        font-size: 85%
-    }
+  html {
+    font-size: 85%;
+  }
+}
+
+.cdk-keyboard-focused {
+  outline: 3px dashed $primary;
+  outline-offset: -3px;
 }

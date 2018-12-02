@@ -21,9 +21,8 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles/reset.css",
-              "src/styles.scss",
-              "src/styles/theme.scss"
+              "node_modules/reset-css/reset.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -73,9 +72,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/styles/reset.css",
-              "src/styles.scss",
-              "src/styles/theme.scss"
+              "node_modules/reset-css/reset.css",
+              "src/styles.scss"
             ],
             "assets": [
               "src/assets",

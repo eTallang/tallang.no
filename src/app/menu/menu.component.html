@@ -1,0 +1,32 @@
+<button
+  role="navigation"
+  class="menu-button"
+  cdkOverlayOrigin
+  cdkMonitorElementFocus
+  #trigger="cdkOverlayOrigin"
+  (click)="isOpen = !isOpen"
+>
+  <i class="material-icons">menu</i>
+</button>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  cdkConnectedOverlayHasBackdrop="true"
+  (detach)="isOpen = false"
+  (backdropClick)="isOpen = false"
+  cdkConnectedOverlayBackdropClass="colored-backdrop"
+>
+  <div class="menu-container">
+    <nav role="listbox" cdkTrapFocus cdkTrapFocusAutoCapture>
+      <a
+        *ngFor="let menuItem of menuItems"
+        role="listitem"
+        [routerLink]="menuItem.url"
+        cdkMonitorElementFocus
+        >{{ menuItem.name }}</a
+      >
+    </nav>
+  </div>
+</ng-template>
