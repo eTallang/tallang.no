@@ -19,12 +19,13 @@
   cdkConnectedOverlayBackdropClass="colored-backdrop"
 >
   <div class="menu-container">
-    <nav role="listbox" cdkTrapFocus cdkTrapFocusAutoCapture>
+    <nav role="listbox" cdkTrapFocus cdkTrapFocusAutoCapture [@listAnimation]="menuItems.length">
       <a
         *ngFor="let menuItem of menuItems"
         role="listitem"
         [routerLink]="menuItem.url"
         cdkMonitorElementFocus
+        (click)="isOpen = false"
         >{{ menuItem.name }}</a
       >
     </nav>

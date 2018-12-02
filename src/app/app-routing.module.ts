@@ -8,7 +8,7 @@ const routes: Routes = [
     redirectTo: 'photos'
   },
   {
-    path: 'me',
+    path: 'about-me',
     loadChildren: 'src/app/about/about.module#AboutModule'
   },
   {

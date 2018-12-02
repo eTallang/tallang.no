@@ -1,5 +1,6 @@
 @import '../../styles/palette.scss';
 @import '../../styles/button.scss';
+@import '../../styles/focus.scss';
 @import '~@angular/cdk/overlay';
 @include cdk-overlay();
 
@@ -18,9 +19,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
 
-  &:hover {
-    background: #fafafa;
+  &:hover, &.cdk-keyboard-focused {
+    background: $primary;
+    color: white;
   }
 }
 
@@ -29,12 +32,17 @@
   background: white;
   
   a {
+    @include dashed-outline();
     display: flex;
     padding: 0 26px 0 16px;
     align-items: center;
     color: $primary;
     text-decoration: none;
     height: 40px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

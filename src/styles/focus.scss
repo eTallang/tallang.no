@@ -1,0 +1,7 @@
+@mixin dashed-outline() {
+  &.cdk-keyboard-focused,
+  &.cdk-program-focused {
+    outline: 3px dashed $primary;
+    outline-offset: -3px;
+  }
+}

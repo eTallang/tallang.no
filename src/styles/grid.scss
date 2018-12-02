@@ -1,5 +1,6 @@
 $base-gutter-size: 32px;
 
+$gutter-64: calc(#{$base-gutter-size} * 2);
 $gutter-32: $base-gutter-size;
 $gutter-16: calc(#{$base-gutter-size}/2);
 $gutter-8: calc(#{$base-gutter-size}/4);
