@@ -1,0 +1,11 @@
+<nav fxLayout="column" fxLayout.xs="row">
+  <a routerLink="''" class="logo" fxHide.xs>t</a>
+  <div fxLayout="column" fxLayout.xs="row" class="menu-buttons">
+    <a *ngFor="let tab of tabs"
+      fxLayoutAlign="center center"
+      [routerLink]="['', tab.url]"
+      routerLinkActive="active">
+      <span [ngClass]="tab.icon"></span>
+    </a>
+  </div>
+</nav>

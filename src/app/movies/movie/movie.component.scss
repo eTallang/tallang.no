@@ -1,0 +1,63 @@
+@import '../../../styles/palette.scss';
+@import '../../../styles/grid.scss';
+@import '~@angular/material/theming';
+
+.movie-container {
+    margin: 0 $gutter-16;
+}
+
+.aspect-ratio {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.4%;
+    min-width: 100px;
+
+    iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0; top: 0;
+        border: none;
+        @include mat-elevation(6);
+    }
+}
+
+.info {
+    font-family: 'Yantramanav', sans-serif;
+    color: white;
+    
+    h1 {
+        font-weight: 100;
+        font-size: 3.2rem;
+    }
+
+    strong {
+        margin-top: $gutter-32;
+        display: inline-block;
+        font-size: 1.7rem;
+    }
+
+    pre, p {
+        margin-top: 0;
+        white-space: pre-line;
+        word-break: break-word;
+        font-size: 1rem;
+    }
+}
+
+.inverse-color {
+    h1 {
+        background: $gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    strong, pre, p {
+        color: #222;
+    }
+}
+
+.align-right {
+    text-align: right;
+}

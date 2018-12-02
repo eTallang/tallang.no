@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="40px" class="movie-container">
+  <div fxFlex="100px" fxHide.xs fxHide.sm fxFlexOrder="0"></div>
+  <div [ngClass]="{'inverse-color': rtl}" fxFlex [fxFlexOrder.gt-sm]="rtl ? 2 : 1">
+    <div class="info" [ngClass.gt-sm]="{'align-right': !rtl}">
+      <h1>{{movie.title}}</h1>
+      <strong>Description</strong>
+      <pre>{{movie.description}}</pre>
+      <strong *ngIf="movie.publishedAt">Published</strong>
+      <p>{{movie.publishedAt | date:'fullDate'}}</p>
+    </div>
+  </div>
+  <div fxFlex [fxFlexOrder.gt-sm]="rtl ? 1 : 2">
+    <div class="aspect-ratio">
+      <iframe [src]="movie.url"
+      allowfullscreen="allowfullscreen"
+      mozallowfullscreen="mozallowfullscreen" 
+      msallowfullscreen="msallowfullscreen" 
+      oallowfullscreen="oallowfullscreen" 
+      webkitallowfullscreen="webkitallowfullscreen"></iframe>
+    </div>
+  </div>
+  <div fxFlex="100px" fxHide.xs fxHide.sm fxFlexOrder="3"></div>
+</div>
