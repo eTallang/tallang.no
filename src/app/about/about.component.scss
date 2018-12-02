@@ -9,18 +9,13 @@
 }
 
 .image-container {
-  height: 200px;
+  height: 160px;
   border-radius: 9999px;
   overflow: hidden;
-  display: inline-block;
   margin-right: $gutter-32;
 
   img {
     height: 100%;
     filter: grayscale(1) contrast(1.1);
   }
-}
-
-.personalia {
-  display: inline-block;
 }

@@ -1,6 +1,7 @@
 <button
   role="navigation"
   class="menu-button"
+  [ngClass]="{ 'mobile': isMobile }"
   cdkOverlayOrigin
   cdkMonitorElementFocus
   #trigger="cdkOverlayOrigin"

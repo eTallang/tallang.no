@@ -1,5 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { trigger, transition, style, stagger, animate, keyframes, query } from '@angular/animations';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 export interface MenuItem {
   url: string;
@@ -25,7 +26,7 @@ export interface MenuItem {
     ])
   ]
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
   menuItems: MenuItem[] = [
     {
       url: 'about-me',
@@ -42,4 +43,13 @@ export class MenuComponent {
   ];
 
   isOpen = false;
+  isMobile = false;
+
+  constructor(private breakpointObserver: BreakpointObserver) { }
+
+  ngOnInit() {
+    this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
+  }
 }

@@ -25,6 +25,13 @@
     background: $primary;
     color: white;
   }
+
+  &.mobile {
+    bottom: 20px;
+    right: 20px;
+    top: initial;
+    left: initial;
+  }
 }
 
 .menu-container {
