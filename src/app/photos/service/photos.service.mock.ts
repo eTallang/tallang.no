@@ -1,7 +1,7 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 
 export class PhotosServiceMock {
   getPhotos() {
-    return Observable.of({});
+    return of({});
   }
 }
