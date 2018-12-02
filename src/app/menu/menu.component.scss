@@ -12,7 +12,7 @@
   left: 20px;
   background: transparent;
   color: $primary;
-  border-radius: 9999px;
+  border-radius: 50%;
   z-index: 9999;
   width: 40px;
   height: 40px;
@@ -20,8 +20,9 @@
   align-items: center;
   justify-content: center;
   outline: none;
+  transition: border-radius .3s ease-in-out;
 
-  &:hover, &.cdk-keyboard-focused {
+  &:hover, &.cdk-keyboard-focused, &.active {
     background: $primary;
     color: white;
   }
@@ -32,23 +33,36 @@
     top: initial;
     left: initial;
   }
+
+  &.active {
+    border-radius: 0;
+  }
 }
 
 .menu-container {
-  padding: 14px;
   background: white;
+  background-color: $primary;
+
+  nav {
+    padding: 14px;
+  }
   
   a {
     @include dashed-outline();
+    outline-color: white !important;
     display: flex;
     padding: 0 26px 0 16px;
     align-items: center;
-    color: $primary;
+    color: white;
     text-decoration: none;
     height: 40px;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &.mobile {
+      justify-content: flex-end;
     }
   }
 }
