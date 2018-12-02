@@ -1,5 +1,4 @@
 import { Component, OnInit, OnChanges, OnDestroy, Input } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'tallang-music-player',

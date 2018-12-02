@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, query, stagger } from '@angular/animations';
 import { MatDialogRef } from '@angular/material';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { Photo } from '../photos/photo';
 

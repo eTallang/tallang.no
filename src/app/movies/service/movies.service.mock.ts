@@ -1,7 +1,7 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable, of } from 'rxjs';
 
 export class MoviesServiceMock {
   getYoutubeVideos(): Observable<any> {
-    return Observable.of([]);
+    return of([]);
   }
 }
