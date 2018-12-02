@@ -14,15 +14,15 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
             },
             {
                 path: 'photos',
-                loadChildren: 'app/photos/photos.module#PhotosModule'
+                loadChildren: 'src/app/photos/photos.module#PhotosModule'
             },
             {
                 path: 'movies',
-                loadChildren: 'app/movies/movies.module#MoviesModule'
+                loadChildren: 'src/app/movies/movies.module#MoviesModule'
             },
             {
                 path: 'music',
-                loadChildren: 'app/music/music.module#MusicModule'
+                loadChildren: 'src/app/music/music.module#MusicModule'
             }
         ]
     },
