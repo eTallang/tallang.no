@@ -2,9 +2,9 @@
 @import '../../../styles/grid.scss';
 
 .movie-container {
-  padding: 0 $gutter-128;
+  padding: $gutter-32 $gutter-128;
   display: flex;
-  height: 80vh;
+  min-height: 80vh;
   align-items: center;
 
   &.reverse {
@@ -18,7 +18,7 @@
   &.mobile {
     flex-direction: column-reverse;
     align-items: flex-start;
-    padding: 0 $gutter-8;
+    padding: $gutter-32 $gutter-8;
 
     .info {
       flex: auto;
