@@ -1,7 +1,6 @@
+<h1>Movies</h1>
 <div [@listAnimation]="movies.length">
   <div *ngFor="let movie of movies; let odd = odd">
-    <div [ngClass]="{'white-theme': odd}" class="movie-row">
-      <tallang-movie [movie]="movie" [rtl]="odd"></tallang-movie>
-    </div>
+    <tallang-movie [movie]="movie" [rtl]="odd"></tallang-movie>
   </div>
 </div>

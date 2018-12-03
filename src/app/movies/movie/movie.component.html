@@ -1,23 +1,21 @@
-<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="40px" class="movie-container">
-  <div fxFlex="100px" fxHide.xs fxHide.sm fxFlexOrder="0"></div>
-  <div [ngClass]="{'inverse-color': rtl}" fxFlex>
-    <div class="info">
-      <h1>{{movie.title}}</h1>
-      <strong>Description</strong>
-      <pre>{{movie.description}}</pre>
-      <strong *ngIf="movie.publishedAt">Published</strong>
-      <p>{{movie.publishedAt | date:'fullDate'}}</p>
+<div class="movie-container" [ngClass]="{ 'reverse': rtl && !isMobile, 'mobile': isMobile }">
+  <div class="info" [ngClass]="{ reverse: !rtl && !isMobile }">
+    <h2>{{ movie.title }}</h2>
+    <h3>Description</h3>
+    <pre>{{ movie.description }}</pre>
+    <h4 *ngIf="movie.publishedAt">Published</h4>
+    <p>{{ movie.publishedAt | date: 'fullDate' }}</p>
+  </div>
+  <div class="test-container">
+    <div class="aspec-ratio-container">
+      <iframe
+        [src]="movie.url"
+        allowfullscreen="allowfullscreen"
+        mozallowfullscreen="mozallowfullscreen"
+        msallowfullscreen="msallowfullscreen"
+        oallowfullscreen="oallowfullscreen"
+        webkitallowfullscreen="webkitallowfullscreen"
+      ></iframe>
     </div>
   </div>
-  <div fxFlex>
-    <div class="aspect-ratio">
-      <iframe [src]="movie.url"
-      allowfullscreen="allowfullscreen"
-      mozallowfullscreen="mozallowfullscreen" 
-      msallowfullscreen="msallowfullscreen" 
-      oallowfullscreen="oallowfullscreen" 
-      webkitallowfullscreen="webkitallowfullscreen"></iframe>
-    </div>
-  </div>
-  <div fxFlex="100px" fxHide.xs fxHide.sm fxFlexOrder="3"></div>
 </div>

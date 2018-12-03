@@ -1,7 +1,8 @@
-.movie-row {
-    padding: 160px 0;
-}
+@import '../../styles/grid';
 
-.white-theme {
-    background: white;
+h1 {
+    text-align: center;
+    padding: $gutter-64 10px;
+    position: absolute;
+    width: 100%;
 }

@@ -2,14 +2,43 @@
 @import '../../../styles/grid.scss';
 
 .movie-container {
-  margin: 0 $gutter-16;
+  margin: 0 $gutter-64;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.mobile {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+
+    .info {
+      flex: auto;
+      margin-left: 0;
+      margin-top: $gutter-16;
+    }
+
+    .test-container {
+      flex: auto;
+      width: 100%;
+      align-items: flex-end;
+    }
+  }
 }
 
-.aspect-ratio {
+.test-container {
+  display: flex;
+  flex: 1;
+}
+
+.aspec-ratio-container {
   position: relative;
   height: 0;
   padding-bottom: 56.4%;
-  min-width: 100px;
+  width: 100%;
 
   iframe {
     position: absolute;
@@ -23,15 +52,15 @@
 }
 
 .info {
-  font-family: 'Yantramanav', sans-serif;
-  color: white;
+  flex: 1;
+  margin-right: 0;
+  margin-left: $gutter-32;
 
-  h1 {
-    font-weight: 100;
+  h2 {
     font-size: 3.2rem;
   }
 
-  strong {
+  h3, h4 {
     margin-top: $gutter-32;
     display: inline-block;
     font-size: 1.7rem;
@@ -43,6 +72,12 @@
     white-space: pre-line;
     word-break: break-word;
     font-size: 1rem;
+  }
+
+  &.reverse {
+    text-align: right;
+    margin-right: $gutter-32;
+    margin-left: 0;
   }
 }
 
