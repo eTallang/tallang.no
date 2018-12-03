@@ -1,4 +1,4 @@
-<div class="movie-container" [ngClass]="{ 'reverse': rtl && !isMobile, 'mobile': isMobile }">
+<div class="movie-container" [ngClass]="{ 'gray-background': rtl, 'reverse': rtl && !isMobile, 'mobile': isMobile }">
   <div class="info" [ngClass]="{ reverse: !rtl && !isMobile }">
     <h2>{{ movie.title }}</h2>
     <h3>Description</h3>
