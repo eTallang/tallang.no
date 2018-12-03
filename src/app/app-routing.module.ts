@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'photos'
+    redirectTo: 'about-me'
   },
   {
     path: 'about-me',
