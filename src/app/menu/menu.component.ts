@@ -15,6 +15,9 @@ export interface MenuItem {
   name: string;
 }
 
+const iconAnimation = '250ms cubic-bezier(.3, 0, 0, 1)';
+const rotateAmount = '240deg';
+
 @Component({
   selector: 'tallang-menu',
   templateUrl: './menu.component.html',
@@ -38,7 +41,35 @@ export interface MenuItem {
           { optional: true }
         )
       ])
-    ])
+    ]),
+    trigger('icon', [
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: `rotate(-${rotateAmount})`
+        }),
+        animate(
+          iconAnimation,
+          style({
+            opacity: 1,
+            transform: 'rotate(0)'
+          })
+        )
+      ]),
+      transition('* => void', [
+        style({
+          opacity: 1,
+          transform: 'rotate(0deg)'
+        }),
+        animate(
+          iconAnimation,
+          style({
+            opacity: 0,
+            transform: `rotate(${rotateAmount})`
+          })
+        )
+      ])
+    ]),
   ]
 })
 export class MenuComponent implements OnInit {
@@ -63,7 +94,7 @@ export class MenuComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
-    this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset]).subscribe(result => {
+    this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall]).subscribe(result => {
       this.isMobile = result.matches;
     });
   }

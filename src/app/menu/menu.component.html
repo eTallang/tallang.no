@@ -1,13 +1,14 @@
 <button
   role="navigation"
   class="menu-button"
-  [ngClass]="{ 'mobile': isMobile, 'active': isOpen }"
+  [ngClass]="{ mobile: isMobile, active: isOpen }"
   cdkOverlayOrigin
   cdkMonitorElementFocus
   #trigger="cdkOverlayOrigin"
   (click)="isOpen = !isOpen"
 >
-  <i class="material-icons">menu</i>
+  <i class="material-icons" @icon *ngIf="isOpen; else: edit">close</i>
+  <ng-template #edit> <i class="material-icons" @icon>menu</i> </ng-template>
 </button>
 
 <ng-template
@@ -22,7 +23,7 @@
   <div class="menu-container">
     <nav role="listbox" cdkTrapFocus cdkTrapFocusAutoCapture [@listAnimation]="menuItems.length">
       <a
-        [ngClass]="{'mobile': isMobile}"
+        [ngClass]="{ mobile: isMobile }"
         *ngFor="let menuItem of menuItems"
         role="listitem"
         [routerLink]="menuItem.url"

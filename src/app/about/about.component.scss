@@ -1,4 +1,5 @@
 @import '../../styles/grid';
+@import '../../styles/palette';
 
 .page-container {
   padding: 40px;
@@ -6,16 +7,60 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-wrap: wrap;
+
+  &.mobile {
+    flex-direction: column;
+  }
+}
+
+.dashed-lines {
+  border-bottom: 2px dashed $primary;
+  width: 200px;
+  margin-bottom: $gutter-16;
 }
 
 .image-container {
-  height: 160px;
+  height: 200px;
   border-radius: 9999px;
   overflow: hidden;
   margin-right: $gutter-32;
+  flex: none;
+
+  &.mobile {
+    margin-right: 0;
+    margin-bottom: $gutter-64;
+    margin-top: calc(#{$gutter-64} * -1);
+  }
 
   img {
     height: 100%;
-    filter: grayscale(1) contrast(1.1);
+    filter: grayscale(1);
+  }
+}
+
+.link-row {
+  margin-top: $gutter-32;
+
+  a {
+    font-size: 30px;
+    padding: 10px;
+    
+    i {
+      color: black;
+      transition: all .3s cubic-bezier(.2, 0, 0, 1);
+    }
+
+    &:not(:last-of-type) {
+      margin-right: $gutter-16;
+    }
+
+    &:hover, &:focus {
+      
+      i {
+        color: $primary;
+        transform: translateY(-10px);
+      }
+    }
   }
 }

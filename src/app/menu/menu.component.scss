@@ -37,6 +37,10 @@
   &.active {
     border-radius: 0;
   }
+
+  i {
+    position: absolute;
+  }
 }
 
 .menu-container {
@@ -51,11 +55,12 @@
     @include dashed-outline();
     outline-color: white !important;
     display: flex;
-    padding: 0 26px 0 16px;
+    padding: 0 46px 0 16px;
     align-items: center;
     color: white;
     text-decoration: none;
     height: 40px;
+    font-size: .875rem;
 
     &:hover {
       text-decoration: underline;
@@ -63,10 +68,11 @@
 
     &.mobile {
       justify-content: flex-end;
+      padding: 0 16px 0 46px;
     }
   }
 }
 
 .colored-backdrop {
-  // background-color: rgba($primary, .2);
+  // background-color: $primary;
 }
