@@ -1,7 +1,6 @@
 <button
   role="navigation"
   class="menu-button"
-  tabindex="1"
   [ngClass]="{ mobile: isMobile, active: isOpen }"
   cdkOverlayOrigin
   cdkMonitorElementFocus
@@ -28,7 +27,7 @@
         *ngFor="let menuItem of menuItems"
         role="listitem"
         [routerLink]="menuItem.url"
-        cdkMonitorElementFocus
+        routerLinkActive="active"
         (click)="isOpen = false"
         >{{ menuItem.name }}</a
       >

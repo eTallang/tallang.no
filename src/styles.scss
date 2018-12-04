@@ -1,11 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import './styles/palette.scss';
 
+body {
+  background-color: $background;
+}
+
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Playfair Display', serif;
+  color: $primary;
 }
 
 p,
@@ -15,6 +20,7 @@ input,
 span {
   font-family: 'Titillium Web', sans-serif;
   font-size: 1.125rem;
+  color: $primary;
 }
 
 @media screen and (max-width: 599px) {

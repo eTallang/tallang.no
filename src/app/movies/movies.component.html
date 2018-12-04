@@ -1,4 +1,3 @@
-<h1>Movies</h1>
 <div [@listAnimation]="movies.length">
   <div *ngFor="let movie of movies; let odd = odd">
     <tallang-movie [movie]="movie" [rtl]="odd"></tallang-movie>

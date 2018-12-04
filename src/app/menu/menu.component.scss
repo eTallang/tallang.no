@@ -24,7 +24,7 @@ $button-size: 50px;
   outline: none;
   transition: border-radius .3s ease-in-out;
 
-  &:hover, &.cdk-keyboard-focused, &.active {
+  &:hover, &.cdk-keyboard-focused, &.cdk-program-focused, &.active {
     background: $primary;
     color: white;
   }
@@ -64,7 +64,7 @@ $button-size: 50px;
     height: 40px;
     font-size: 1rem;
 
-    &:hover {
+    &:hover, &.active {
       text-decoration: underline;
     }
 
