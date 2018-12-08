@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { fromEvent } from 'rxjs';
+import { throttleTime } from 'rxjs/operators';
 
 @Component({
   selector: 'tallang-about',
@@ -8,12 +10,23 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class AboutComponent implements OnInit {
   isMobile = false;
+  dashWidth = 150;
+  @ViewChild('profileImage') imageElement: ElementRef<HTMLImageElement>;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall]).subscribe(result => {
       this.isMobile = result.matches;
+    });
+
+    fromEvent(this.imageElement.nativeElement, 'mousemove').pipe(throttleTime(20)).subscribe((event: MouseEvent) => {
+      const img = this.imageElement.nativeElement;
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+      const xRatio = (mouseX - img.offsetLeft) / img.clientWidth;
+      const yRatio = (mouseY - img.offsetTop) / img.clientHeight;
+      this.dashWidth = 300 * ((xRatio + yRatio) / 2);
     });
   }
 }

@@ -14,9 +14,14 @@
   }
 }
 
+.line-container {
+  overflow: hidden;
+  transition: width .1s ease-in-out;
+}
+
 .dashed-lines {
   border-bottom: 2px dashed $primary;
-  width: 200px;
+  width: 300px;
   margin-bottom: $gutter-16;
 }
 

@@ -40,7 +40,7 @@ const rotateAmount = '240deg';
           ':enter',
           stagger('60ms', [
             animate(
-              '400ms cubic-bezier(0, 0, 0, 1)',
+              '400ms 100ms cubic-bezier(0, 0, 0, 1)',
               keyframes([
                 style({ opacity: 0, transform: 'translateY(-16px)', offset: 0 }),
                 style({ opacity: 1, transform: 'translateX(0)', offset: 1 })
