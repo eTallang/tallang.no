@@ -117,7 +117,7 @@ export class MenuComponent implements OnInit {
 
   toggleMenu() {
     if (this.isOpen) {
-      this.isOpen = false;
+      this.closeMenu();
     } else {
       this.isOpen = true;
       this.changeDetectorRef.detectChanges();
@@ -127,6 +127,12 @@ export class MenuComponent implements OnInit {
         }
       });
     }
+  }
+
+  closeMenu() {
+    this.isOpen = false;
+    this.selectedItem = null;
+    this.hoveredItem = null;
   }
 
   getMenuDirective(subMenuItem: MenuItem): MenuItemDirective {

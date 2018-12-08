@@ -16,8 +16,8 @@
   [cdkConnectedOverlayOrigin]="trigger"
   [cdkConnectedOverlayOpen]="isOpen"
   cdkConnectedOverlayHasBackdrop="true"
-  (detach)="isOpen = false"
-  (backdropClick)="isOpen = false"
+  (detach)="closeMenu()"
+  (backdropClick)="closeMenu()"
   cdkConnectedOverlayBackdropClass="colored-backdrop"
 >
   <div class="menu-container" (mouseleave)="hoveredItem = null">
@@ -31,7 +31,7 @@
         *ngFor="let menuItem of menuItems"
         role="listitem"
         [routerLink]="menuItem.url"
-        (click)="isOpen = false"
+        (click)="closeMenu()"
         (mouseenter)="hoveredItem = getMenuDirective(menuItem)"
         (click)="selectedItem = getMenuDirective(menuItem)" 
         >{{ menuItem.name }}</a
