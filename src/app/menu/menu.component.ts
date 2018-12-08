@@ -1,4 +1,11 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation,
+  OnInit,
+  ViewChildren,
+  QueryList,
+  ChangeDetectorRef
+} from '@angular/core';
 import {
   trigger,
   transition,
@@ -9,6 +16,8 @@ import {
   query
 } from '@angular/animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MenuItemDirective } from './menu-item.directive';
+import { Router } from '@angular/router';
 
 export interface MenuItem {
   url: string;
@@ -69,10 +78,13 @@ const rotateAmount = '240deg';
           })
         )
       ])
-    ]),
+    ])
   ]
 })
 export class MenuComponent implements OnInit {
+  @ViewChildren(MenuItemDirective) subMenuItems: QueryList<MenuItemDirective>;
+  hoveredItem: MenuItemDirective;
+  selectedItem: MenuItemDirective;
   menuItems: MenuItem[] = [
     {
       url: 'about-me',
@@ -91,11 +103,33 @@ export class MenuComponent implements OnInit {
   isOpen = false;
   isMobile = false;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall]).subscribe(result => {
       this.isMobile = result.matches;
     });
+  }
+
+  toggleMenu() {
+    if (this.isOpen) {
+      this.isOpen = false;
+    } else {
+      this.isOpen = true;
+      this.changeDetectorRef.detectChanges();
+      this.menuItems.forEach(menuItem => {
+        if (this.router.isActive(menuItem.url, false)) {
+          this.selectedItem = this.getMenuDirective(menuItem);
+        }
+      });
+    }
+  }
+
+  getMenuDirective(subMenuItem: MenuItem): MenuItemDirective {
+    return this.subMenuItems.find(i => i.value === subMenuItem);
   }
 }

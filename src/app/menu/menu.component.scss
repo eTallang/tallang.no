@@ -46,31 +46,29 @@ $button-size: 50px;
 }
 
 .menu-container {
-  background: white;
   background-color: $primary;
+  position: relative;
 
-  nav {
-    padding: 14px;
+  .spacer {
+    height: 20px;
   }
-  
+
   a {
     @include dashed-outline();
     outline-color: white !important;
     display: flex;
-    padding: 0 46px 0 16px;
+    padding: 0 80px 0 30px;
     align-items: center;
     color: white;
     text-decoration: none;
-    height: 40px;
+    height: 50px;
     font-size: 1rem;
-
-    &:hover, &.active {
-      text-decoration: underline;
-    }
+    letter-spacing: .7px;
+    transition: margin .3s ease-in-out;
 
     &.mobile {
       justify-content: flex-end;
-      padding: 0 16px 0 46px;
+      padding: 0 30px 0 80px;
     }
   }
 }

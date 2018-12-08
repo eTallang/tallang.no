@@ -1,0 +1,14 @@
+.selected-item-marker-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 10px;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.4, 1);
+  color: white;
+
+  &.rtl {
+    left: initial;
+    right: 10px;
+  }
+}
