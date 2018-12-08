@@ -10,7 +10,7 @@ import { throttleTime } from 'rxjs/operators';
 })
 export class AboutComponent implements OnInit {
   isMobile = false;
-  dashWidth = 150;
+  dashWidth = 200;
   @ViewChild('profileImage') imageElement: ElementRef<HTMLImageElement>;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
@@ -22,10 +22,8 @@ export class AboutComponent implements OnInit {
 
     fromEvent(this.imageElement.nativeElement, 'mousemove').pipe(throttleTime(20)).subscribe((event: MouseEvent) => {
       const img = this.imageElement.nativeElement;
-      const mouseX = event.clientX;
-      const mouseY = event.clientY;
-      const xRatio = (mouseX - img.offsetLeft) / img.clientWidth;
-      const yRatio = (mouseY - img.offsetTop) / img.clientHeight;
+      const xRatio = (event.clientX - img.offsetLeft) / img.clientWidth;
+      const yRatio = (event.clientY - img.offsetTop) / img.clientHeight;
       this.dashWidth = 300 * ((xRatio + yRatio) / 2);
     });
   }
