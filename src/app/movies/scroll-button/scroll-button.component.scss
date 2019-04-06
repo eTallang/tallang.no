@@ -1,0 +1,94 @@
+$button-size: 50px;
+
+.arrow-container {
+  position: relative;
+  height: $button-size;
+  width: $button-size;
+  flex: none;
+
+  .line {
+    width: 2px;
+    background-color: white;
+    position: absolute;
+    transition: all .3s ease;
+  }
+  
+  .center {
+    height: calc(#{$button-size} / 2.8);
+    left: calc(50% - 1px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .left {
+    height: 8px;
+    left: 21px;
+    width: 1.5px;
+    
+    transform: rotate(130deg);
+    bottom: 15px;
+
+    &.up {
+      transform: rotate(50deg);
+      bottom: 27px;
+    }
+  }
+
+  .right {
+    height: 8px;
+    right: 21px;
+    width: 1.5px;
+    transform: rotate(50deg);
+    bottom: 15px;
+
+    &.up {
+      transform: rotate(130deg);
+      bottom: 27px;
+    }
+  }
+}
+
+.scroll-button {
+  display: flex;
+  align-items: center;
+  min-width: $button-size;
+  height: $button-size;
+  padding: 0;
+  width: 250px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  white-space: nowrap;
+  animation: scaleUp .3s ease 2s, shrink .5s cubic-bezier(0.6, 0, 0, 1) 4s;
+  animation-fill-mode: forwards;
+  transform: scale(0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  transition: box-shadow .3s ease;
+
+  &:hover, &:focus {
+    outline: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 250px;
+  }
+
+  to {
+    width: $button-size;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(.5);
+    opacity: .7;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

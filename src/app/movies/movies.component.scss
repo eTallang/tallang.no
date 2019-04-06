@@ -3,11 +3,12 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
   grid-gap: $gutter-32;
   margin: 250px 60px 100px;
 
   &.mobile {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     margin: 100px 6px;
   }
 }

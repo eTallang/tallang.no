@@ -11,10 +11,12 @@
   ></iframe>
 </div>
 
-<div class="container" [ngClass]="{mobile: isMobile}">
+<div class="container" [ngClass]="{mobile: isMobile}" #moviesContainer>
   <tallang-movie
     [movie]="movie"
     *ngFor="let movie of movies"
     (watch)="setSelectedMovie($event)"
   ></tallang-movie>
 </div>
+
+<tallang-scroll-button *ngIf="showScrollButton" class="scroll-button" [direction]="atTopOfPage ? 'down' : 'up'" (click)="scroll()"></tallang-scroll-button>
