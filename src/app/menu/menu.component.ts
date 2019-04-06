@@ -15,9 +15,10 @@ import {
   keyframes,
   query
 } from '@angular/animations';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { MenuItemDirective } from './menu-item.directive';
 import { Router } from '@angular/router';
+
+import { MenuItemDirective } from './menu-item.directive';
+import { BreakpointService } from '../core';
 
 export interface MenuItem {
   url: string;
@@ -104,15 +105,13 @@ export class MenuComponent implements OnInit {
   isMobile = false;
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
+    private breakpointService: BreakpointService,
     private router: Router,
     private changeDetectorRef: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
-    this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall]).subscribe(result => {
-      this.isMobile = result.matches;
-    });
+    this.breakpointService.isMobile.subscribe(result => this.isMobile = result.matches);
   }
 
   toggleMenu() {

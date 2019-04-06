@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import { MoviesService } from './service/movies.service';
 import { Movie } from './movie';
+import { BreakpointService } from '../core';
 
 @Component({
   selector: 'tallang-movies',
@@ -13,11 +14,13 @@ export class MoviesComponent implements OnInit {
   @ViewChild('movieFrame') movieFrame: ElementRef<HTMLIFrameElement>;
   movies: Movie[] = [];
   selectedMovie: Movie;
+  isMobile: boolean;
   youtubeUrlRoot = 'https://www.youtube.com/embed/';
 
-  constructor(private moviesService: MoviesService, private sanitizer: DomSanitizer) { }
+  constructor(private moviesService: MoviesService, private sanitizer: DomSanitizer, private breakpointService: BreakpointService) { }
 
   ngOnInit() {
+    this.breakpointService.isMobile.subscribe(result => this.isMobile = result.matches);
     this.moviesService.getYoutubeVideos()
     .subscribe(movies => {
       movies.forEach(movie => this.sanitize(movie));

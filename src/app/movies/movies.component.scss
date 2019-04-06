@@ -3,9 +3,13 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   grid-gap: $gutter-32;
   margin: 250px 60px 100px;
+
+  &.mobile {
+    margin: 100px 6px;
+  }
 }
 
 tallang-movie {
@@ -18,6 +22,12 @@ tallang-movie {
   padding-bottom: 34.1%;
   width: 60vw;
   margin: 130px auto 0;
+
+  &.mobile {
+    width: calc(100vw - 20px);
+    padding-bottom: 53.7%;
+    margin: 40px 6px 0;
+  }
 
   iframe {
     position: absolute;

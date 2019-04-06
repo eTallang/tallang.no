@@ -1,4 +1,4 @@
-<div class="aspec-ratio-container">
+<div class="aspec-ratio-container" [ngClass]="{mobile: isMobile}">
   <iframe
     #movieFrame
     title="Selected movie"
@@ -11,7 +11,7 @@
   ></iframe>
 </div>
 
-<div class="container">
+<div class="container" [ngClass]="{mobile: isMobile}">
   <tallang-movie
     [movie]="movie"
     *ngFor="let movie of movies"
