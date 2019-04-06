@@ -1,44 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { MoviesService } from './service/movies.service';
-import { trigger, style, transition, animate, query, keyframes, stagger } from '@angular/animations';
 import { Movie } from './movie';
 
 @Component({
   selector: 'tallang-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss'],
-  animations: [
-    trigger('listAnimation', [
-      transition('* => *', [
-        query(':enter', style({ opacity: 0 }), { optional: true }),
-        query(':enter', stagger('220ms', [
-          animate('1400ms cubic-bezier(0,.59,.39,1)', keyframes([
-            style({ opacity: 0, transform: 'translateY(-40px)', offset: 0}),
-            style({ opacity: 1, transform: 'translateX(0)', offset: 1}),
-          ]))
-        ]), { optional: true } )
-      ])
-    ])
-  ]
+  styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
+  @ViewChild('movieFrame') movieFrame: ElementRef<HTMLIFrameElement>;
   movies: Movie[] = [];
+  selectedMovie: Movie;
   youtubeUrlRoot = 'https://www.youtube.com/embed/';
 
   constructor(private moviesService: MoviesService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.moviesService.getYoutubeVideos()
-    .subscribe((result: Movie[]) => {
-      result.map(movie => this.sanitize(movie));
-      this.movies = result;
+    .subscribe(movies => {
+      movies.forEach(movie => this.sanitize(movie));
+      this.movies = movies;
+      this.selectedMovie = movies[0];
     });
   }
 
   sanitize(movie: Movie) {
     const fullUrl = `${this.youtubeUrlRoot}${movie.resourceId.videoId}`;
     movie.url = this.sanitizer.bypassSecurityTrustResourceUrl(fullUrl);
+  }
+
+  setSelectedMovie(selectedMovie: Movie): void {
+    this.selectedMovie = selectedMovie;
+    setTimeout(() => {
+      this.movieFrame.nativeElement.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }, 100);
   }
 }

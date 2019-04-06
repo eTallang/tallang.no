@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Movie } from '../movie';
 
 @Component({
   selector: 'tallang-movie',
@@ -7,10 +8,10 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-  @Input() movie: any;
-  @Input() rtl: boolean;
-
+  @Input() movie: Movie;
+  @Output() watch = new EventEmitter<Movie>();
   isMobile = false;
+  hasMouseHover = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 

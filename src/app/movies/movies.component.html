@@ -1,5 +1,20 @@
-<div [@listAnimation]="movies.length">
-  <div *ngFor="let movie of movies; let odd = odd">
-    <tallang-movie [movie]="movie" [rtl]="odd"></tallang-movie>
-  </div>
+<div class="aspec-ratio-container">
+  <iframe
+    #movieFrame
+    title="Selected movie"
+    [src]="selectedMovie?.url"
+    allowfullscreen="allowfullscreen"
+    mozallowfullscreen="mozallowfullscreen"
+    msallowfullscreen="msallowfullscreen"
+    oallowfullscreen="oallowfullscreen"
+    webkitallowfullscreen="webkitallowfullscreen"
+  ></iframe>
+</div>
+
+<div class="container">
+  <tallang-movie
+    [movie]="movie"
+    *ngFor="let movie of movies"
+    (watch)="setSelectedMovie($event)"
+  ></tallang-movie>
 </div>
