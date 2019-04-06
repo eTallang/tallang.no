@@ -96,8 +96,8 @@ export class MenuComponent implements OnInit {
       name: 'Movies'
     },
     {
-      url: 'blog',
-      name: 'Blog'
+      url: 'code',
+      name: 'Code'
     }
   ];
 

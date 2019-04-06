@@ -11,8 +11,8 @@ const routes: Routes = [
     loadChildren: 'src/app/movies/movies.module#MoviesModule'
   },
   {
-    path: 'blog',
-    loadChildren: 'src/app/blog/blog.module#BlogModule'
+    path: 'code',
+    loadChildren: 'src/app/code/code.module#CodeModule'
   },
   {
     path: '**',
