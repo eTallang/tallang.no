@@ -1,0 +1,42 @@
+@import '../../styles/palette.scss';
+
+:host {
+  position: relative;
+}
+
+.sprite {
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  position: absolute;
+  top: 0;
+  background-color: red;
+
+  &.primary {
+    // background-color: $primary;
+  }
+
+  &.accent {
+    background-color: $accent;
+  }
+
+  &.top {
+    top: 0;
+    transform: translateY(-7px);
+  }
+
+  &.right {
+    right: 0;
+    transform: translateX(7px);
+  }
+
+  &.bottom {
+    bottom: 0;
+    transform: translateY(7px);
+  }
+
+  &.left {
+    left: 0;
+    transform: translateX(-7px);
+  }
+}
