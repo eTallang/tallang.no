@@ -7,8 +7,8 @@
   #trigger="cdkOverlayOrigin"
   (click)="toggleMenu()"
 >
-  <i class="material-icons" @icon *ngIf="isOpen; else: edit">close</i>
-  <ng-template #edit> <i class="material-icons" @icon>menu</i> </ng-template>
+  <em class="material-icons" @icon *ngIf="isOpen; else: edit">close</em>
+  <ng-template #edit> <em class="material-icons" @icon>menu</em> </ng-template>
 </button>
 
 <ng-template

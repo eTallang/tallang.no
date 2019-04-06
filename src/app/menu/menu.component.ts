@@ -87,7 +87,7 @@ export class MenuComponent implements OnInit {
   selectedItem: MenuItemDirective;
   menuItems: MenuItem[] = [
     {
-      url: 'about-me',
+      url: '',
       name: 'About me'
     },
     {
