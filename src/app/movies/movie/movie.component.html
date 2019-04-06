@@ -6,6 +6,6 @@
     <h1>{{ movie.title }}</h1>
     <span class="date">{{ movie.publishedAt | date:'fullDate' }}</span>
     <pre class="description">{{ movie.description }}</pre>
-    <button class="primary-button watch-button" *ngIf="hasMouseHover" (click)="watch.emit(movie)">Watch</button>
+    <button class="primary-button watch-button" [ngClass]="{'show': hasMouseOver}" (click)="watch.emit(movie)">Watch</button>
   </div>
 </div>

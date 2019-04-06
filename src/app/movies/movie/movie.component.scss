@@ -55,8 +55,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    animation: bounce .8s ease;
-    animation-fill-mode: forwards;
     opacity: 0;
+
+    &.show, &:focus {
+      animation: bounce .8s ease;
+      animation-fill-mode: forwards;
+      outline: none;
+    }
   }
 }
