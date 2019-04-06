@@ -1,3 +1,6 @@
+@import './grid.scss';
+@import './palette.scss';
+
 @mixin button-reset {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -13,4 +16,15 @@
   &::-moz-focus-inner {
     border: 0;
   }
+}
+
+.primary-button {
+  @include button-reset();
+  background: $primary;
+  color: white;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  padding: $gutter-8 $gutter-32;
 }
