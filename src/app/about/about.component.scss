@@ -1,5 +1,5 @@
-@import '../../styles/grid';
-@import '../../styles/palette';
+@import 'grid';
+@import 'palette';
 
 .page-container {
   padding: 40px;
@@ -72,17 +72,4 @@
       }
     }
   }
-}
-
-.watch-button {
-  background: $primary;
-  color: white;
-  border-radius: 9999px;
-  border: none;
-  margin-top: 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-  padding: $gutter-8 $gutter-32;
-  cursor: pointer;
 }
