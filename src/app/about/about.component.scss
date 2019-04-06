@@ -31,6 +31,7 @@
 
 .image-container {
   height: 200px;
+  width: 200px;
   border-radius: 9999px;
   overflow: hidden;
   margin-right: $gutter-64;
@@ -71,4 +72,17 @@
       }
     }
   }
+}
+
+.watch-button {
+  background: $primary;
+  color: white;
+  border-radius: 9999px;
+  border: none;
+  margin-top: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  padding: $gutter-8 $gutter-32;
+  cursor: pointer;
 }
