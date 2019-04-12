@@ -1,5 +1,6 @@
 <div class="aspec-ratio-container" [ngClass]="{mobile: isMobile}">
   <iframe
+    *ngIf="selectedMovie"
     #movieFrame
     title="Selected movie"
     [src]="selectedMovie?.url"
