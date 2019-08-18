@@ -13,8 +13,8 @@ import { BreakpointService } from '../core';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-  @ViewChild('movieFrame') movieFrame: ElementRef<HTMLIFrameElement>;
-  @ViewChild('moviesContainer') moviesContainer: ElementRef<HTMLElement>;
+  @ViewChild('movieFrame', { static: false }) movieFrame: ElementRef<HTMLIFrameElement>;
+  @ViewChild('moviesContainer', { static: true }) moviesContainer: ElementRef<HTMLElement>;
   movies: Movie[] = [];
   selectedMovie: Movie;
   isMobile: boolean;

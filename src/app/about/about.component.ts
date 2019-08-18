@@ -11,7 +11,7 @@ import { throttleTime } from 'rxjs/operators';
 export class AboutComponent implements OnInit {
   isMobile = false;
   dashWidth = 200;
-  @ViewChild('profileImage') imageElement: ElementRef<HTMLImageElement>;
+  @ViewChild('profileImage', { static: true }) imageElement: ElementRef<HTMLImageElement>;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
