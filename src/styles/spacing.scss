@@ -1,0 +1,52 @@
+:root {
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+  --spacing-72: 72px;
+  --spacing-80: 80px;
+}
+
+.mb-8 {
+  margin-bottom: var(--spacing-8);
+}
+
+.mb-16 {
+  margin-bottom: var(--spacing-16);
+}
+
+.mb-24 {
+  margin-bottom: var(--spacing-24);
+}
+
+.mb-32 {
+  margin-bottom: var(--spacing-32);
+}
+
+.mb-40 {
+  margin-bottom: var(--spacing-40);
+}
+
+.mb-48 {
+  margin-bottom: var(--spacing-48);
+}
+
+.mb-56 {
+  margin-bottom: var(--spacing-56);
+}
+
+.mb-64 {
+  margin-bottom: var(--spacing-64);
+}
+
+.mb-72 {
+  margin-bottom: var(--spacing-72);
+}
+
+.mb-80 {
+  margin-bottom: var(--spacing-80);
+}

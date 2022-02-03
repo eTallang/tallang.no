@@ -1,30 +1,39 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <nav id="nav"></nav>
+  <main class="main-content">
+    <router-view />
+  </main>
+  <Footer />
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+import Footer from '@/components/Footer.vue';
+
+export default defineComponent({
+  components: { Footer },
+});
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import '@/styles/breakpoints';
 
-#nav {
-  padding: 30px;
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--spacing-24) var(--spacing-24) var(--spacing-80);
+  flex: auto;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  @include gt-mobile() {
+    max-width: 90vw;
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  @include gt-tablet() {
+    max-width: 80vw;
   }
 }
 </style>

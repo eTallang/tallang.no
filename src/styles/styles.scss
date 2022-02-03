@@ -1,0 +1,23 @@
+@import './css-reset.scss';
+@import './breakpoints.scss';
+@import './spacing.scss';
+@import './typography.scss';
+
+:root {
+  --primary: #55bca5;
+  --secondary: #ef8980;
+  --tertiary: #80a1f7;
+  --light-gray: #f5f5f5;
+  --black: #000;
+  --white: #fff;
+}
+
+body {
+  background-color: var(--primary);
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
