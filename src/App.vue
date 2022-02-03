@@ -33,7 +33,7 @@ export default defineComponent({
   }
 
   @include gt-tablet() {
-    max-width: 80vw;
+    max-width: min(80vw, 1300px);
   }
 }
 </style>

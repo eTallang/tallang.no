@@ -34,7 +34,7 @@ export default defineComponent({
 @import '@/styles/breakpoints';
 
 .title-container {
-  --font-size: 5.625rem;
+  --font-size: 6.5rem;
   width: var(--font-size);
 
   @include gt-mobile() {
@@ -48,6 +48,6 @@ export default defineComponent({
   color: var(--light-gray);
   display: inline-block;
   font-size: var(--font-size);
-  text-shadow: 0px 17px 150px #21997e;
+  text-shadow: 0px 17px 150px #166e5b;
 }
 </style>

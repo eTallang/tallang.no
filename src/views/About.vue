@@ -54,43 +54,34 @@ export default defineComponent({
   grid-template-rows: repeat(2 auto);
   align-items: flex-start;
 
-  @include gt-mobile() {
-    .content {
-      grid-column: 2;
-      margin-left: auto;
-
-      * {
-        text-align: right;
-      }
-    }
-
-    .link-row {
-      justify-content: flex-end;
-    }
-  }
-
   @include gt-tablet() {
     margin-top: 0;
     align-items: center;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto;
     gap: var(--spacing-40);
-
-    .content {
-      margin-top: 0;
-      grid-row: 1;
-    }
-
-    .avatar {
-      grid-column: 3;
-    }
   }
 }
 
 .content {
-  margin-top: var(--spacing-32);
+  margin-top: var(--spacing-56);
   max-width: 600px;
   grid-column: 1 / -1;
+
+  @include gt-mobile() {
+    margin-top: var(--spacing-32);
+    grid-column: 2;
+    margin-left: auto;
+
+    * {
+      text-align: right;
+    }
+  }
+
+  @include gt-tablet() {
+    margin-top: 0;
+    grid-row: 1;
+  }
 }
 
 .link-row {
@@ -100,11 +91,22 @@ export default defineComponent({
   .fa-brands {
     color: var(--light-gray);
   }
+
+  @include gt-mobile() {
+    justify-content: flex-end;
+  }
 }
 
 .avatar {
   max-width: 300px;
-  width: calc(80px + 50vw);
+  width: 100%;
   justify-self: flex-end;
+  align-self: flex-end;
+
+  @include gt-tablet() {
+    width: calc(100px + 15vw);
+    align-self: center;
+    grid-column: 3;
+  }
 }
 </style>
