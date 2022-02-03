@@ -1,18 +1,18 @@
 <template>
   <div class="about-container">
-    <Title>About</Title>
-    <img src="../assets/avatar.svg" alt="Avatar" class="avatar" />
+    <Title class="reveal">About</Title>
+    <img src="../assets/avatar.svg" alt="Avatar" class="avatar reveal" />
     <div class="content">
-      <h2 class="title-2 mb-8">Hi there!</h2>
-      <p class="text-medium mb-32">
+      <h2 class="title-2 mb-8 reveal">Hi there!</h2>
+      <p class="text-medium mb-32 reveal">
         I'm Erik Tallang! Welcome to my humble page. I'm a guy with a passion
         for web design and web technologies in general.
       </p>
-      <p class="text-medium mb-32">
+      <p class="text-medium mb-32 reveal">
         I usually use this page as a playground to test out funny libraries and
         new tech!
       </p>
-      <div class="link-row">
+      <div class="link-row reveal">
         <a href="https://github.com/eTallang" aria-label="Github">
           <i class="fa-brands fa-2xl fa-github" />
         </a>
@@ -37,9 +37,13 @@
 import { defineComponent } from 'vue';
 
 import Title from '@/components/Title.vue';
+import { useReveal } from '@/utils';
 
 export default defineComponent({
   components: { Title },
+  setup() {
+    useReveal();
+  },
 });
 </script>
 
