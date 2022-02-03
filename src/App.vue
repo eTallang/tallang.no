@@ -25,7 +25,7 @@ export default defineComponent({
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: var(--spacing-24) var(--spacing-24) var(--spacing-80);
+  padding: var(--spacing-24);
   flex: auto;
 
   @include gt-mobile() {

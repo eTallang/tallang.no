@@ -5,15 +5,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
 
 export default defineComponent({
   setup() {
     const title = ref<HTMLElement>();
     const titleWidth = ref(0);
 
-    onMounted(() => {
+    const setContainerWidth = () => {
       titleWidth.value = title.value?.clientWidth || 0;
+    };
+
+    onMounted(() => {
+      setContainerWidth();
+      window.addEventListener('resize', setContainerWidth);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', setContainerWidth);
     });
 
     return { title, titleWidth };
@@ -22,9 +31,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/breakpoints';
+
 .title-container {
-  --font-size: calc(2rem + 12vh);
+  --font-size: 5.625rem;
   width: var(--font-size);
+
+  @include gt-mobile() {
+    --font-size: calc(2rem + 12vh);
+  }
 }
 
 .title {

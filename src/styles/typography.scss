@@ -1,3 +1,5 @@
+@import '@/styles/breakpoints';
+
 .title-1 {
   font-family: 'Playfair Display', 'Times New Roman', Times, serif;
   font-weight: 800;
@@ -10,16 +12,24 @@
   font-family: 'Outfit', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 0.05em;
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   color: var(--light-gray);
   line-height: 1.4;
+  
+  @include gt-mobile() {
+    font-size: 2.25rem;
+  }
 }
 
 .text-medium {
   font-family: 'Outfit', Arial, sans-serif;
   font-weight: 500;
   letter-spacing: 0.75px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--light-gray);
   line-height: 1.2;
+  
+  @include gt-mobile() {
+    font-size: 1.5rem;
+  }
 }
