@@ -3,7 +3,6 @@
     <img src="../assets/wave-3.svg" height="160" aria-hidden="true" />
     <img src="../assets/wave-2.svg" height="140" aria-hidden="true" />
     <img src="../assets/wave-1.svg" height="110" aria-hidden="true" />
-    <div class="bottom-curtain" />
   </footer>
 </template>
 
@@ -12,65 +11,55 @@
   position: relative;
   height: 210px;
   overflow: hidden;
-  background: linear-gradient(
-    transparent 0%,
-    transparent 80%,
-    var(--light-gray) 80%
-  );
 
-  .bottom-curtain,
   img {
     position: absolute;
-    bottom: 0;
-  }
-
-  .bottom-curtain {
-    width: 100%;
-    background-color: var(--light-gray);
-    height: 35px;
-  }
-
-  img {
+    bottom: -30px;
     width: calc(1000px + 20vw);
     min-width: 100%;
     max-height: 160px;
-    filter: drop-shadow(0px -10px 30px rgba(26, 154, 126, 0.4));
-    animation: wave 2.6s ease-out forwards;
+    filter: drop-shadow(0px -10px 20px rgba(26, 154, 126, 0.4));
+    animation: wave 2.6s ease forwards;
+    animation-delay: 1s;
     transform: translateY(50px);
+    opacity: 0;
 
     &:nth-child(1) {
-      animation-delay: 300ms;
+      animation-delay: 1300ms;
     }
 
     &:nth-child(2) {
-      animation-delay: 600ms;
+      animation-delay: 1600ms;
     }
   }
 }
 
 @keyframes wave {
   0% {
-    transform: translateY(30px);
+    transform: translateY(50px);
+    opacity: 0;
   }
 
   20% {
-    transform: translateY(-20px);
+    transform: translateY(-15px);
+    opacity: 1;
   }
 
   40% {
-    transform: translateY(10px);
+    transform: translateY(7px);
   }
 
   60% {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
 
   80% {
-    transform: translateY(2px);
+    transform: translateY(1px);
   }
 
   100% {
     transform: translateY(0px);
+    opacity: 1;
   }
 }
 </style>
