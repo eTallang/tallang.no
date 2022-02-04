@@ -4,7 +4,6 @@ import './reveal.scss';
 export const useReveal = () => {
   onMounted(() => {
     const elements = document.querySelectorAll('.reveal');
-    console.log(elements);
     elements.forEach((element, index) => {
       element.classList.remove('visible');
 

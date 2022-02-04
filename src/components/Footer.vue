@@ -9,12 +9,12 @@
 <style lang="scss" scoped>
 .footer {
   position: relative;
-  height: 210px;
+  height: 160px;
   overflow: hidden;
 
   img {
     position: absolute;
-    bottom: -30px;
+    bottom: -50px;
     width: calc(1000px + 20vw);
     min-width: 100%;
     max-height: 160px;

@@ -13,16 +13,32 @@
         new tech!
       </p>
       <div class="link-row reveal">
-        <a href="https://github.com/eTallang" aria-label="Github">
+        <a
+          target="_blank"
+          href="https://github.com/eTallang"
+          aria-label="Github"
+        >
           <i class="fa-brands fa-2xl fa-github" />
         </a>
-        <a href="https://500px.com/etallang" aria-label="500px">
+        <a
+          target="_blank"
+          href="https://www.instagram.com/tallang/"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-2xl fa-instagram" />
+        </a>
+        <a target="_blank" href="https://500px.com/etallang" aria-label="500px">
           <i class="fa-brands fa-2xl fa-500px" />
         </a>
-        <a href="https://soundcloud.com/tallang" aria-label="Soundcloud">
+        <a
+          target="_blank"
+          href="https://soundcloud.com/tallang"
+          aria-label="Soundcloud"
+        >
           <i class="fa-brands fa-2xl fa-soundcloud" />
         </a>
         <a
+          target="_blank"
           href="https://open.spotify.com/artist/4ysuVltwubdiTLTjkgNgFi?si=FuZzBDYWReG9AcZC1pDCWw"
           aria-label="Spotify"
         >
