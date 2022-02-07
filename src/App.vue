@@ -67,8 +67,7 @@ export default defineComponent({
 
 .page-navigation {
   display: flex;
-  padding-top: var(--spacing-32);
-  margin: 0 auto;
+  margin: var(--spacing-32) auto var(--spacing-16);
   gap: var(--spacing-40);
 
   .link {

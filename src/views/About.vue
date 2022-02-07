@@ -50,7 +50,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 
 import Title from '@/components/Title.vue';
 import { useReveal } from '@/utils';
@@ -58,7 +58,9 @@ import { useReveal } from '@/utils';
 export default defineComponent({
   components: { Title },
   setup() {
-    useReveal();
+    const reveal = useReveal();
+
+    onMounted(() => reveal())
   },
 });
 </script>

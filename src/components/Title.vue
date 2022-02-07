@@ -48,6 +48,6 @@ export default defineComponent({
   color: var(--light-gray);
   display: inline-block;
   font-size: var(--font-size);
-  text-shadow: 0px 17px 100px #248671;
+  text-shadow: var(--shadow-hard);
 }
 </style>
