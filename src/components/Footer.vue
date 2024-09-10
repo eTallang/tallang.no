@@ -1,25 +1,62 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="{ visible: playedAnimation }" ref="footerElement">
     <img src="../assets/wave-3.svg" height="160" aria-hidden="true" />
     <img src="../assets/wave-2.svg" height="140" aria-hidden="true" />
     <img src="../assets/wave-1.svg" height="110" aria-hidden="true" />
+    <a href="https://www.youtube.com/t/terms" class="link"
+      >YouTube terms of service</a
+    >
   </footer>
 </template>
+
+<script lang="ts">
+import { defineComponent, ref, watch } from 'vue';
+import { useInViewDetection } from '@/utils';
+
+export default defineComponent({
+  setup() {
+    const footerElement = ref<HTMLElement>();
+    const inView = useInViewDetection(footerElement);
+    const playedAnimation = ref(false);
+
+    watch(inView, () => {
+      if (inView) {
+        playedAnimation.value = true;
+      }
+    })
+
+    return { footerElement, playedAnimation };
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 .footer {
   position: relative;
   height: 160px;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+
+  &.visible {
+    img {
+      animation: wave 2.6s ease forwards;
+    }
+  }
+
+  .link {
+    z-index: 1;
+    margin: var(--spacing-16);
+    font-size: 0.675rem;
+  }
 
   img {
     position: absolute;
-    bottom: -50px;
+    bottom: -30px;
     width: calc(1000px + 20vw);
     min-width: 100%;
     max-height: 160px;
     filter: drop-shadow(0px -10px 20px rgba(26, 154, 126, 0.4));
-    animation: wave 2.6s ease forwards;
     animation-delay: 1s;
     transform: translateY(50px);
     opacity: 0;
